@@ -1,6 +1,0 @@
-interface:
-  display_name: "WorkAI Timeline Schedule"
-  short_description: "Create and schedule WorkAI tasks"
-  default_prompt: "Use $workai-timeline-schedule to create and schedule a WorkAI task from project overview context."
-policy:
-  allow_implicit_invocation: true

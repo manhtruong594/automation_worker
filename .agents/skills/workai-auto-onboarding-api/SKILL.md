@@ -23,10 +23,9 @@ Nếu token/cookie hết hạn:
 
 ```json
 {
-  "error": {
-    "code": "UNAUTHENTICATED",
-    "message": "Chrome session expired or missing WorkAI auth token."
-  }
+  "success": false,
+  "message": "...",
+  "errors": {}
 }
 ```
 
