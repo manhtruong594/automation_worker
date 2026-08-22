@@ -1,0 +1,205 @@
+{
+  "batch_id": "workai-batch-5b3b7353ebcd3b99",
+  "source_row_count": 6,
+  "items": [
+    {
+      "row_number": 1,
+      "item_id": "workai-item-5b3b7353ebcd3b99-1",
+      "status": "completed",
+      "client_request_id": "workai-onboarding-2026-08-17-g-warsurvival-them-logic-mua-unit-gem-r1",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "issue_type": "Story",
+      "task_name": "thêm logic mua unit = gem",
+      "summary": "Thêm logic mua unit bằng Gem cho hệ thống nâng cấp WarSurvival",
+      "start_date": "2026-08-17",
+      "estimated_hours": 5.0,
+      "optional_context": "",
+      "issue_id": 268220,
+      "issue_key": "GFW-536",
+      "blocks": [
+        {
+          "date": "2026-08-17",
+          "hours": 2.0,
+          "client_request_id": "workai-onboarding-2026-08-17-g-warsurvival-them-logic-mua-unit-gem-r1-2026-08-17-2h",
+          "allocation_id": 90498
+        },
+        {
+          "date": "2026-08-18",
+          "hours": 1.0,
+          "client_request_id": "workai-onboarding-2026-08-17-g-warsurvival-them-logic-mua-unit-gem-r1-2026-08-18-1h",
+          "allocation_id": 90499
+        },
+        {
+          "date": "2026-08-19",
+          "hours": 2.0,
+          "client_request_id": "workai-onboarding-2026-08-17-g-warsurvival-them-logic-mua-unit-gem-r1-2026-08-19-2h",
+          "allocation_id": 90512
+        }
+      ],
+      "fallback_used": false,
+      "fallback_reason": null,
+      "description_source": "workai_ai",
+      "error": null,
+      "assignee_id": 168,
+      "content_applied": true
+    },
+    {
+      "row_number": 2,
+      "item_id": "workai-item-5b3b7353ebcd3b99-2",
+      "status": "completed",
+      "client_request_id": "workai-onboarding-2026-08-18-g-mob-era-build-ios-0-2-8-mob-r2",
+      "project_id": 85,
+      "project_name": "G - MOB.ERA",
+      "issue_type": "Story",
+      "task_name": "build ios 0,2,8 mob",
+      "summary": "Build bản iOS 0.2.8 cho dự án MOB.ERA và xác minh gói phát hành",
+      "start_date": "2026-08-18",
+      "estimated_hours": 5.0,
+      "optional_context": "",
+      "issue_id": 268221,
+      "issue_key": "GTLU-2823",
+      "blocks": [
+        {
+          "date": "2026-08-18",
+          "hours": 4.0,
+          "client_request_id": "workai-onboarding-2026-08-18-g-mob-era-build-ios-0-2-8-mob-r2-2026-08-18-4h"
+        },
+        {
+          "date": "2026-08-19",
+          "hours": 1.0,
+          "client_request_id": "workai-onboarding-2026-08-18-g-mob-era-build-ios-0-2-8-mob-r2-2026-08-19-1h"
+        }
+      ],
+      "fallback_used": false,
+      "fallback_reason": null,
+      "description_source": "workai_ai",
+      "error": null,
+      "assignee_id": 168,
+      "content_applied": true
+    },
+    {
+      "row_number": 3,
+      "item_id": "workai-item-5b3b7353ebcd3b99-3",
+      "status": "completed",
+      "client_request_id": "workai-onboarding-2026-08-19-g-warsurvival-sua-logic-di-chuyen-cua-enemy-them-logic-tan-cong-r3",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "issue_type": "Story",
+      "task_name": "sửa logic di chuyển của enemy, thêm logic tấn công",
+      "summary": "Sửa logic di chuyển và bổ sung hành vi tấn công của enemy WarSurvival",
+      "start_date": "2026-08-19",
+      "estimated_hours": 6.0,
+      "optional_context": "",
+      "issue_id": 268222,
+      "issue_key": "GFW-537",
+      "blocks": [
+        {
+          "date": "2026-08-19",
+          "hours": 5.83,
+          "client_request_id": "workai-onboarding-2026-08-19-g-warsurvival-sua-logic-di-chuyen-cua-enemy-them-logic-tan-cong-r3-2026-08-19-5.83h",
+          "allocation_id": 90520
+        },
+        {
+          "date": "2026-08-20",
+          "hours": 0.17,
+          "client_request_id": "workai-onboarding-2026-08-19-g-warsurvival-sua-logic-di-chuyen-cua-enemy-them-logic-tan-cong-r3-2026-08-20-0.17h",
+          "allocation_id": 90521
+        }
+      ],
+      "fallback_used": false,
+      "fallback_reason": null,
+      "description_source": "workai_ai",
+      "error": null,
+      "content_applied": true,
+      "assignee_id": 168
+    },
+    {
+      "row_number": 4,
+      "item_id": "workai-item-5b3b7353ebcd3b99-4",
+      "status": "completed",
+      "client_request_id": "workai-onboarding-2026-08-20-g-warsurvival-them-tuy-chinh-radius-cho-bullet-r4",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "issue_type": "Story",
+      "task_name": "thêm tùy chỉnh radius cho bullet",
+      "summary": "Thêm cấu hình tùy chỉnh bán kính va chạm cho bullet trong WarSurvival",
+      "start_date": "2026-08-20",
+      "estimated_hours": 6.0,
+      "optional_context": "",
+      "issue_id": 268223,
+      "issue_key": "GFW-538",
+      "blocks": [
+        {
+          "date": "2026-08-20",
+          "hours": 6.0,
+          "client_request_id": "workai-onboarding-2026-08-20-g-warsurvival-them-tuy-chinh-radius-cho-bullet-r4-2026-08-20-6h"
+        }
+      ],
+      "fallback_used": false,
+      "fallback_reason": null,
+      "description_source": "workai_ai",
+      "error": null,
+      "assignee_id": 168,
+      "content_applied": true
+    },
+    {
+      "row_number": 5,
+      "item_id": "workai-item-5b3b7353ebcd3b99-5",
+      "status": "completed",
+      "client_request_id": "workai-onboarding-2026-08-21-g-warsurvival-fix-feedback-tren-sheet-r5",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "issue_type": "Story",
+      "task_name": "fix feedback trên sheet",
+      "summary": "Sửa feedback lực văng enemy và nháy sáng barrel gear trong WarSurvival",
+      "start_date": "2026-08-21",
+      "estimated_hours": 6.0,
+      "optional_context": "Lính địch chết cho văng xa hơn để trông lực hơn, Khi bắn vào barel/gear có nháy sáng mesh",
+      "issue_id": 268224,
+      "issue_key": "GFW-539",
+      "blocks": [
+        {
+          "date": "2026-08-21",
+          "hours": 6.0,
+          "client_request_id": "workai-onboarding-2026-08-21-g-warsurvival-fix-feedback-tren-sheet-r5-2026-08-21-6h"
+        }
+      ],
+      "fallback_used": false,
+      "fallback_reason": null,
+      "description_source": "workai_ai",
+      "error": null,
+      "assignee_id": 168,
+      "content_applied": true
+    },
+    {
+      "row_number": 6,
+      "item_id": "workai-item-5b3b7353ebcd3b99-6",
+      "status": "completed",
+      "client_request_id": "workai-onboarding-2026-08-22-g-warsurvival-build-game-android-phien-ban-0-0-1-2-r6",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "issue_type": "Story",
+      "task_name": "build game android phiên bản 0,0,1,2",
+      "summary": "Build game Android phiên bản 0.0.1.2 cho dự án WarSurvival",
+      "start_date": "2026-08-22",
+      "estimated_hours": 6.0,
+      "optional_context": "",
+      "issue_id": 268225,
+      "issue_key": "GFW-540",
+      "blocks": [
+        {
+          "date": "2026-08-22",
+          "hours": 6.0,
+          "client_request_id": "workai-onboarding-2026-08-22-g-warsurvival-build-game-android-phien-ban-0-0-1-2-r6-2026-08-22-6h"
+        }
+      ],
+      "fallback_used": false,
+      "fallback_reason": null,
+      "description_source": "workai_ai",
+      "error": null,
+      "assignee_id": 168,
+      "content_applied": true
+    }
+  ]
+}

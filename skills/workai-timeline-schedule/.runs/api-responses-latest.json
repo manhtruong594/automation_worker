@@ -1,0 +1,453 @@
+﻿{
+    "captured_at":  "2026-08-20T14:21:19.9640563+07:00",
+    "source":  "skills/workai-timeline-schedule/references/workai-api-example.md",
+    "auth":  "redacted",
+    "results":  [
+                    {
+                        "name":  "read_timeline_week",
+                        "method":  "GET",
+                        "url":  "https://workai-be.horus.io.vn/api/time-allocations?start_date=2026-08-17\u0026end_date=2026-08-23",
+                        "status":  200,
+                        "response":  {
+                                         "success":  true,
+                                         "data":  {
+                                                      "allocations":  {
+                                                                          "2026-08-17":  [
+
+                                                                                         ],
+                                                                          "2026-08-18":  [
+
+                                                                                         ],
+                                                                          "2026-08-19":  [
+
+                                                                                         ],
+                                                                          "2026-08-20":  [
+                                                                                             {
+                                                                                                 "id":  88872,
+                                                                                                 "user_id":  168,
+                                                                                                 "issue_id":  266767,
+                                                                                                 "allocation_date":  "2026-08-20",
+                                                                                                 "planned_hours":  0.1,
+                                                                                                 "effective_hours":  null,
+                                                                                                 "sort_order":  0,
+                                                                                                 "notes":  null,
+                                                                                                 "issue":  {
+                                                                                                               "id":  266767,
+                                                                                                               "jira_issue_key":  "GFW-516",
+                                                                                                               "summary":  "Thay effect mới nâng cấp cho đám đông, cho phép đổi màu effect theo loại nâng cấp",
+                                                                                                               "status":  "In Progress",
+                                                                                                               "priority":  "Medium",
+                                                                                                               "issue_type":  "Story",
+                                                                                                               "story_points":  null,
+                                                                                                               "project":  {
+                                                                                                                               "id":  115,
+                                                                                                                               "name":  "G - WarSurvival",
+                                                                                                                               "jira_project_key":  "GFW"
+                                                                                                                           }
+                                                                                                           },
+                                                                                                 "created_at":  "2026-08-20T03:11:10.000000Z",
+                                                                                                 "updated_at":  "2026-08-20T03:11:10.000000Z"
+                                                                                             }
+                                                                                         ],
+                                                                          "2026-08-21":  [
+
+                                                                                         ],
+                                                                          "2026-08-22":  [
+
+                                                                                         ],
+                                                                          "2026-08-23":  [
+
+                                                                                         ]
+                                                                      },
+                                                      "daily_summary":  [
+                                                                            {
+                                                                                "date":  "2026-08-17",
+                                                                                "day_of_week":  1,
+                                                                                "is_weekend":  false,
+                                                                                "is_saturday":  false,
+                                                                                "is_holiday":  false,
+                                                                                "is_day_off":  false,
+                                                                                "is_half_day_off":  false,
+                                                                                "half_day_period":  null,
+                                                                                "total_allocated_hours":  0,
+                                                                                "effective_allocated_hours":  0,
+                                                                                "effective_ratio":  1,
+                                                                                "actual_work_hours":  8.16,
+                                                                                "standard_hours":  8,
+                                                                                "ot_hours":  0,
+                                                                                "ot_level":  null,
+                                                                                "idle_hours":  8.16,
+                                                                                "over_hours":  0,
+                                                                                "allocation_count":  0,
+                                                                                "status":  "no_allocation",
+                                                                                "utilization_status":  "no_data",
+                                                                                "has_actual_data":  true,
+                                                                                "check_in_time":  "08:01",
+                                                                                "check_out_time":  "17:41"
+                                                                            },
+                                                                            {
+                                                                                "date":  "2026-08-18",
+                                                                                "day_of_week":  2,
+                                                                                "is_weekend":  false,
+                                                                                "is_saturday":  false,
+                                                                                "is_holiday":  false,
+                                                                                "is_day_off":  false,
+                                                                                "is_half_day_off":  false,
+                                                                                "half_day_period":  null,
+                                                                                "total_allocated_hours":  0,
+                                                                                "effective_allocated_hours":  0,
+                                                                                "effective_ratio":  1,
+                                                                                "actual_work_hours":  9.31,
+                                                                                "standard_hours":  8,
+                                                                                "ot_hours":  1.31,
+                                                                                "ot_level":  "normal",
+                                                                                "idle_hours":  9.31,
+                                                                                "over_hours":  0,
+                                                                                "allocation_count":  0,
+                                                                                "status":  "no_allocation",
+                                                                                "utilization_status":  "no_data",
+                                                                                "has_actual_data":  true,
+                                                                                "check_in_time":  "08:08",
+                                                                                "check_out_time":  "18:57"
+                                                                            },
+                                                                            {
+                                                                                "date":  "2026-08-19",
+                                                                                "day_of_week":  3,
+                                                                                "is_weekend":  false,
+                                                                                "is_saturday":  false,
+                                                                                "is_holiday":  false,
+                                                                                "is_day_off":  false,
+                                                                                "is_half_day_off":  false,
+                                                                                "half_day_period":  null,
+                                                                                "total_allocated_hours":  0,
+                                                                                "effective_allocated_hours":  0,
+                                                                                "effective_ratio":  1,
+                                                                                "actual_work_hours":  8.83,
+                                                                                "standard_hours":  8,
+                                                                                "ot_hours":  0.83,
+                                                                                "ot_level":  "normal",
+                                                                                "idle_hours":  8.83,
+                                                                                "over_hours":  0,
+                                                                                "allocation_count":  0,
+                                                                                "status":  "no_allocation",
+                                                                                "utilization_status":  "no_data",
+                                                                                "has_actual_data":  true,
+                                                                                "check_in_time":  "07:57",
+                                                                                "check_out_time":  "18:17"
+                                                                            },
+                                                                            {
+                                                                                "date":  "2026-08-20",
+                                                                                "day_of_week":  4,
+                                                                                "is_weekend":  false,
+                                                                                "is_saturday":  false,
+                                                                                "is_holiday":  false,
+                                                                                "is_day_off":  false,
+                                                                                "is_half_day_off":  false,
+                                                                                "half_day_period":  null,
+                                                                                "total_allocated_hours":  0.1,
+                                                                                "effective_allocated_hours":  0.1,
+                                                                                "effective_ratio":  1,
+                                                                                "actual_work_hours":  8,
+                                                                                "standard_hours":  8,
+                                                                                "ot_hours":  0,
+                                                                                "ot_level":  null,
+                                                                                "idle_hours":  7.9,
+                                                                                "over_hours":  0,
+                                                                                "allocation_count":  1,
+                                                                                "status":  "normal",
+                                                                                "utilization_status":  "under",
+                                                                                "has_actual_data":  false,
+                                                                                "check_in_time":  "08:00",
+                                                                                "check_out_time":  null
+                                                                            },
+                                                                            {
+                                                                                "date":  "2026-08-21",
+                                                                                "day_of_week":  5,
+                                                                                "is_weekend":  false,
+                                                                                "is_saturday":  false,
+                                                                                "is_holiday":  false,
+                                                                                "is_day_off":  false,
+                                                                                "is_half_day_off":  false,
+                                                                                "half_day_period":  null,
+                                                                                "total_allocated_hours":  0,
+                                                                                "effective_allocated_hours":  0,
+                                                                                "effective_ratio":  1,
+                                                                                "actual_work_hours":  8,
+                                                                                "standard_hours":  8,
+                                                                                "ot_hours":  0,
+                                                                                "ot_level":  null,
+                                                                                "idle_hours":  8,
+                                                                                "over_hours":  0,
+                                                                                "allocation_count":  0,
+                                                                                "status":  "no_allocation",
+                                                                                "utilization_status":  "no_data",
+                                                                                "has_actual_data":  false,
+                                                                                "check_in_time":  null,
+                                                                                "check_out_time":  null
+                                                                            },
+                                                                            {
+                                                                                "date":  "2026-08-22",
+                                                                                "day_of_week":  6,
+                                                                                "is_weekend":  false,
+                                                                                "is_saturday":  true,
+                                                                                "is_holiday":  false,
+                                                                                "is_day_off":  false,
+                                                                                "is_half_day_off":  false,
+                                                                                "half_day_period":  null,
+                                                                                "total_allocated_hours":  0,
+                                                                                "effective_allocated_hours":  0,
+                                                                                "effective_ratio":  1,
+                                                                                "actual_work_hours":  8,
+                                                                                "standard_hours":  8,
+                                                                                "ot_hours":  0,
+                                                                                "ot_level":  null,
+                                                                                "idle_hours":  8,
+                                                                                "over_hours":  0,
+                                                                                "allocation_count":  0,
+                                                                                "status":  "no_allocation",
+                                                                                "utilization_status":  "no_data",
+                                                                                "has_actual_data":  false,
+                                                                                "check_in_time":  null,
+                                                                                "check_out_time":  null
+                                                                            },
+                                                                            {
+                                                                                "date":  "2026-08-23",
+                                                                                "day_of_week":  0,
+                                                                                "is_weekend":  true,
+                                                                                "is_saturday":  false,
+                                                                                "is_holiday":  false,
+                                                                                "is_day_off":  false,
+                                                                                "is_half_day_off":  false,
+                                                                                "half_day_period":  null,
+                                                                                "total_allocated_hours":  0,
+                                                                                "effective_allocated_hours":  0,
+                                                                                "effective_ratio":  1,
+                                                                                "actual_work_hours":  0,
+                                                                                "standard_hours":  0,
+                                                                                "ot_hours":  0,
+                                                                                "ot_level":  null,
+                                                                                "idle_hours":  0,
+                                                                                "over_hours":  0,
+                                                                                "allocation_count":  0,
+                                                                                "status":  "weekend",
+                                                                                "utilization_status":  "weekend",
+                                                                                "has_actual_data":  false,
+                                                                                "check_in_time":  null,
+                                                                                "check_out_time":  null
+                                                                            }
+                                                                        ],
+                                                      "week_summary":  {
+                                                                           "total_allocated":  0.1,
+                                                                           "total_effective_allocated":  0.1,
+                                                                           "total_actual":  50.3,
+                                                                           "total_standard":  48,
+                                                                           "total_ot":  2.14,
+                                                                           "ot_level":  "normal",
+                                                                           "total_idle":  50.2,
+                                                                           "total_over":  0,
+                                                                           "utilization_pct":  0.2
+                                                                       }
+                                                  },
+                                         "meta":  {
+                                                      "user_id":  168,
+                                                      "is_viewing_as":  false,
+                                                      "can_edit":  true,
+                                                      "locked_periods":  [
+
+                                                                         ]
+                                                  }
+                                     }
+                    },
+                    {
+                        "name":  "find_issue_by_key",
+                        "method":  "GET",
+                        "url":  "https://workai-be.horus.io.vn/api/time-allocations/available-issues?week_start_date=2026-08-17\u0026search=GTLU-2716\u0026page=1",
+                        "status":  200,
+                        "response":  {
+                                         "success":  true,
+                                         "data":  [
+
+                                                  ],
+                                         "meta":  {
+                                                      "current_page":  1,
+                                                      "per_page":  20,
+                                                      "total":  0,
+                                                      "last_page":  1,
+                                                      "from":  null,
+                                                      "to":  null
+                                                  }
+                                     }
+                    },
+                    {
+                        "name":  "read_issue_by_id",
+                        "method":  "GET",
+                        "url":  "https://workai-be.horus.io.vn/api/issues/2716",
+                        "status":  200,
+                        "response":  {
+                                         "success":  true,
+                                         "data":  {
+                                                      "id":  2716,
+                                                      "project_id":  22,
+                                                      "sprint_id":  151,
+                                                      "jira_issue_id":  "29787",
+                                                      "jira_issue_key":  "GPXF-3079",
+                                                      "summary":  "Test reward các vị trí trong và ngoài trận Android Adjust",
+                                                      "description":  null,
+                                                      "issue_type":  "Story",
+                                                      "status":  "Done",
+                                                      "priority":  "Must-Have",
+                                                      "assignee_id":  91,
+                                                      "reporter_id":  91,
+                                                      "story_points":  null,
+                                                      "ai_suggested_story_points":  null,
+                                                      "ai_confidence_score":  null,
+                                                      "ai_explanation":  null,
+                                                      "original_estimate_seconds":  null,
+                                                      "time_spent_seconds":  null,
+                                                      "remaining_estimate_seconds":  null,
+                                                      "resolution":  null,
+                                                      "created_date":  "2025-12-01T10:10:23.000000Z",
+                                                      "updated_date":  "2025-12-08T01:54:03.000000Z",
+                                                      "resolved_date":  null,
+                                                      "due_date":  null,
+                                                      "last_synced_at":  "2026-04-15T08:47:54.000000Z",
+                                                      "created_at":  "2025-12-23T01:26:51.000000Z",
+                                                      "updated_at":  "2026-04-25T02:11:36.000000Z",
+                                                      "epic_id":  147,
+                                                      "ready_to_review_at":  "2025-12-05T01:25:48.000000Z",
+                                                      "done_at":  "2025-12-08T01:54:03.000000Z",
+                                                      "review_delay_hours":  "72.47",
+                                                      "is_ai_score_reviewed":  false,
+                                                      "final_reviewed_point":  null,
+                                                      "reviewed_by_user_id":  null,
+                                                      "reviewed_at":  null,
+                                                      "ai_score":  null,
+                                                      "ai_scored_at":  null,
+                                                      "review_reject_count":  0,
+                                                      "last_review_reject_at":  null,
+                                                      "end_date":  null,
+                                                      "work_time":  null,
+                                                      "pending_jira_sync":  false,
+                                                      "hour_score":  null,
+                                                      "hour_score_reason":  null,
+                                                      "backlog_rank":  "0.0000000000",
+                                                      "parent_issue_id":  null,
+                                                      "component_id":  null,
+                                                      "labels":  null,
+                                                      "sprint_rank":  null,
+                                                      "story_analysis":  null,
+                                                      "story_normalization":  "{\"role\": \"Game Tester Lead\", \"unit\": \"Task\", \"quantity\": 1, \"specific_target\": \"Android platform with Adjust integration\", \"action_general_object\": \"Testing rewards at in-game and out-of-game positions\"}",
+                                                      "project_role_id":  422,
+                                                      "role_name":  "Game Tester Lead",
+                                                      "created_by_id":  91,
+                                                      "acceptance_criteria":  null,
+                                                      "requires_result":  false,
+                                                      "result":  null,
+                                                      "result_marked_by_id":  null,
+                                                      "result_marked_at":  null,
+                                                      "current_status":  null,
+                                                      "progress":  null,
+                                                      "cancellation_reason":  null,
+                                                      "cancelled_by_id":  null,
+                                                      "cancelled_at":  null,
+                                                      "estimated_hours":  null,
+                                                      "no_result":  false,
+                                                      "no_result_reason":  null,
+                                                      "result_updated_at":  null,
+                                                      "ai_review_status":  "not_applicable",
+                                                      "ai_review_claimed_at":  null,
+                                                      "kpi_multiplier":  "1.00",
+                                                      "can_score":  false,
+                                                      "permissions":  {
+                                                                          "can_edit":  false,
+                                                                          "can_edit_all":  false,
+                                                                          "can_edit_own":  false,
+                                                                          "editable_fields":  [
+
+                                                                                              ],
+                                                                          "can_cancel":  false,
+                                                                          "can_review_result":  false
+                                                                      },
+                                                      "work_cost":  null,
+                                                      "work_value":  null,
+                                                      "issue_key":  "GPXF-3079",
+                                                      "kpi_score":  null,
+                                                      "sprint":  {
+                                                                     "id":  151,
+                                                                     "name":  "Pixel Sprint 7",
+                                                                     "state":  "closed",
+                                                                     "start_date":  "2025-12-01T01:36:00.000000Z",
+                                                                     "end_date":  "2025-12-08T01:36:00.000000Z"
+                                                                 },
+                                                      "epic":  {
+                                                                   "id":  147,
+                                                                   "jira_epic_key":  "GPXF-2859",
+                                                                   "epic_name":  "Build game Android Adjust 0.0.1.2",
+                                                                   "epic_status":  "Done"
+                                                               },
+                                                      "assignee":  {
+                                                                       "id":  91,
+                                                                       "avatar":  null,
+                                                                       "hourly_rate":  "36500.00",
+                                                                       "username":  "lyhh",
+                                                                       "display_name":  "Hoàng Hương Ly",
+                                                                       "email":  "lyhh@horusvn.com",
+                                                                       "avatar_url":  "https://workai-be.horus.io.vn/api/avatar/proxy?url=aHR0cHM6Ly93b3JrLmhvcnVzanNjLmNvbS9zZWN1cmUvdXNlcmF2YXRhcj9vd25lcklkPUpJUkFVU0VSMTAzMjImYXZhdGFySWQ9MTE0Nzk%3D\u0026signature=004b472db057ee6e300b5873f0411eed7c05c07c3bb8d7fd97901f75d47ea805",
+                                                                       "horus_employee":  null
+                                                                   },
+                                                      "reporter":  {
+                                                                       "id":  91,
+                                                                       "avatar":  null,
+                                                                       "username":  "lyhh",
+                                                                       "display_name":  "Hoàng Hương Ly",
+                                                                       "email":  "lyhh@horusvn.com",
+                                                                       "avatar_url":  "https://workai-be.horus.io.vn/api/avatar/proxy?url=aHR0cHM6Ly93b3JrLmhvcnVzanNjLmNvbS9zZWN1cmUvdXNlcmF2YXRhcj9vd25lcklkPUpJUkFVU0VSMTAzMjImYXZhdGFySWQ9MTE0Nzk%3D\u0026signature=004b472db057ee6e300b5873f0411eed7c05c07c3bb8d7fd97901f75d47ea805"
+                                                                   },
+                                                      "project":  {
+                                                                      "id":  22,
+                                                                      "jira_project_key":  "GPXF",
+                                                                      "name":  "G - PIXELFLOWPUZZLE",
+                                                                      "description":  "# PROJECT OVERVIEW: Flow Color Pixel Puzzle\n\n**Phiên bản:** 1.0  \n**Ngày:** 05/01/2026  \n**Người lập:** Product Owner (AI Assist)\n\n---\n\n## 1. Game Identity\n\n- **Tên dự án:** Cannon Blast Colors  \n- **Thể loại:** Hyper-Casual / Puzzle  \n- **Core Loop:**  \n  Chọn Gunner → Di chuyển trên băng chuyền → Bắn màu vào tranh → Phá \u0026 thu thập Pixel  \n- **Tagline:** *“Sắc màu bùng nổ – Giải đố mê say”*\n\n---\n\n## 2. Game Vision \u0026 Objectives\n\n### Mục tiêu\n- Tạo trải nghiệm giải đố ngắn gọn, nơi người chơi **tính toán thứ tự Gunner và màu sắc** để dọn sạch tranh pixel.\n- Kết hợp **logic nhẹ + cảm giác thỏa mãn khi phá tranh**.\n- Thế giới nhân vật dễ thương (MeowBot, Rabbit) mang tính thư giãn.\n\n### Đối tượng\n- Người chơi Casual, mọi độ tuổi  \n- Yêu thích puzzle nhẹ, pixel/voxel art  \n- Chơi theo phiên ngắn (short session)\n\n---\n\n## 3. Core Gameplay Mechanics\n\n### Điều khiển \u0026 Tương tác\n- Người chơi **chạm chọn Gunner** từ hàng đợi (Messy Pile).\n- Gunner di chuyển trên **băng chuyền khép kín** quanh bức tranh.\n- Gunner **tự động bắn** pixel cùng màu trên đường thẳng phía trước.\n\n### Luật chơi\n- **Ammo:** mỗi Gunner có số đạn màu giới hạn.\n- **Pixel HP:** pixel cần đủ đạn để bị phá.\n- **Thắng:** dọn sạch toàn bộ pixel màu.\n- **Jam / Deadlock:** băng chuyền hoặc hàng chờ bị kẹt → cần Booster hoặc thua.\n\n---\n\n## 4. Obstacles \u0026 States\n\n### Chướng ngại vật\n- **Candy:** nhiều lớp, cần bắn nhiều lần.\n- **Pipe:** nhận damage chung, phá để mở pixel bên dưới.\n- **Wall / Indestructible Wall:** chặn đạn, tạo góc bắn.\n- **Block Fountain:** khi kích hoạt sẽ sinh thêm block màu.\n- **Key:** phá pixel xung quanh để mở khóa Gunner bị khóa.\n\n### Gunner đặc biệt\n- **Frozen Cat:** bị đóng băng nhiều lớp, tan dần theo lượt.\n- **Bomber Meow:** bom đếm lượt, không xả hết đạn → Game Over.\n- **DupliCat:** nhân bản Gunner, chia đôi đạn.\n- **MeowBot:** có cooldown giữa các lần kích hoạt.\n- **Hidden Gunner:** ẩn màu cho đến khi ra hàng đầu.\n- **Linked Gunner:** di chuyển theo chuỗi, chỉ biến mất khi toàn bộ hết đạn.\n- **Lock Slot:** ô khóa trong hàng chờ, mở bằng Key.\n\n### Trạng thái hệ thống\n- **Docking Slots:** tối đa 5 Gunner trong hàng chờ → quản lý slot là yếu tố sống còn.\n\n---\n\n## 5. Key Features\n\n1. **Pixel Clearing Puzzle**  \n   Dọn sạch tranh bằng cách tối ưu thứ tự Gunner và đạn màu.\n\n2. **Gunner Strategy Depth**  \n   Kỹ năng đặc biệt (Bom, Nhân bản, Đóng băng…) tạo bài toán chiến thuật.\n\n3. **Obstacle-driven Design**  \n   Pipe, Candy, Wall, Fountain buộc người chơi tính toán đường bắn.\n\n4. **Boosters**\n   - **Slot Expansion:** tăng số Gunner hoạt động.\n   - **FreePick:** chọn/gỡ Gunner tự do.\n   - **Super Shoot:** phá toàn bộ pixel \u0026 obstacle cùng màu.\n\n---\n\n## 6. Game World \u0026 Content\n\n- **Theme:** Tranh Pixel Art (Động vật, Hoa quả, Đồ vật…)\n- **Visual Style:** 3D Hyper-Casual, màu tươi, hình khối đơn giản.\n- **VFX:** Nổ màu, rung màn hình, hiệu ứng hoàn tranh.\n- **Rewards:** Coin rơi khi thắng màn.\n\n---\n\n## 7. User Experience\n\n### UI Flow\n1. **Home:** Start, Settings, Shop, Daily Gift  \n2. **Gameplay HUD:**  \n   - Top: Level, Gold, Pause  \n   - Center: Băng chuyền + Tranh  \n   - Bottom: Hàng đợi + Booster  \n3. **Popups:**  \n   - Stuck/Dead End  \n   - Revive (Ads / Coin)  \n   - Victory / Next Level  \n\n### UX Principles\n- Thao tác 1 tay  \n- UI lớn, rõ, phản hồi nhanh  \n- Thất bại dễ hiểu, dễ retry\n\n---\n\n## 8. Platform \u0026 Status\n\n- **Android:** \n- **iOS:** \n- **Trạng thái:** Released + Live Ops  \n- **Version:** 0.0.1.0 (MVP)  \n- **Hiện tại:** Tinh chỉnh core gameplay, mở rộng level pack\n\n---",
+                                                                      "executive_rank":  null,
+                                                                      "company_id":  2
+                                                                  },
+                                                      "versions":  [
+
+                                                                   ],
+                                                      "component":  null,
+                                                      "latest_quality_assessment":  null,
+                                                      "latest_result_review":  null,
+                                                      "result_marked_by":  null,
+                                                      "cancelled_by":  null,
+                                                      "result_attachments":  [
+
+                                                                             ],
+                                                      "result_links":  [
+
+                                                                       ]
+                                                  }
+                                     }
+                    },
+                    {
+                        "name":  "generate_ai_fields",
+                        "method":  "POST",
+                        "url":  "https://workai-be.horus.io.vn/api/issues/quick-create/suggest-description",
+                        "status":  null,
+                        "error_message":  "Request timed out after 75 seconds when called with sample payload from markdown."
+                    },
+                    {
+                        "name":  "create_issue",
+                        "method":  "POST",
+                        "url":  "https://workai-be.horus.io.vn/api/issues",
+                        "skipped":  true,
+                        "reason":  "skipped_requires_confirmation_side_effect"
+                    },
+                    {
+                        "name":  "add_timeline_block",
+                        "method":  "POST",
+                        "url":  "https://workai-be.horus.io.vn/api/issues/2716/transition",
+                        "skipped":  true,
+                        "reason":  "skipped_requires_confirmation_side_effect"
+                    }
+                ]
+}

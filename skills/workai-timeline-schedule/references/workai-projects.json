@@ -1,0 +1,90 @@
+{
+  "projects": [
+    {
+      "canonical_name": "Mob Era",
+      "workai_name": "G - MOB.ERA",
+      "project_id": 85,
+      "issue_prefix": "GTLU",
+      "overview_path": "project_overview_mob_era.md",
+      "aliases": [
+        "Mob Era",
+        "MOB.ERA",
+        "G - MOB.ERA"
+      ]
+    },
+    {
+      "canonical_name": "Quan Ly Dieu Hanh Game",
+      "workai_name": "G - QUANLY-DIEUHANH-GAME",
+      "project_id": 81,
+      "issue_prefix": null,
+      "overview_path": "project_overview_viec_chung_cong_ty.md",
+      "aliases": [
+        "Quan Ly Dieu Hanh Game",
+        "Quan Ly Dieu Hanh",
+        "QUANLY-DIEUHANH-GAME",
+        "G - QUANLY-DIEUHANH-GAME"
+      ]
+    },
+    {
+      "canonical_name": "Sky Defense",
+      "workai_name": "G - SKYDEFENSE",
+      "project_id": 30,
+      "issue_prefix": null,
+      "overview_path": null,
+      "aliases": [
+        "Sky Defense",
+        "SKYDEFENSE",
+        "G - SKYDEFENSE"
+      ]
+    },
+    {
+      "canonical_name": "Viec Ca Nhan",
+      "workai_name": "G - ViecCaNhan",
+      "project_id": 110,
+      "issue_prefix": null,
+      "overview_path": null,
+      "aliases": [
+        "Viec Ca Nhan",
+        "ViecCaNhan",
+        "G - ViecCaNhan"
+      ]
+    },
+    {
+      "canonical_name": "Viec Chung Ngoai Du An",
+      "workai_name": "G - ViecChungNgoaiDuAn",
+      "project_id": 59,
+      "issue_prefix": null,
+      "overview_path": "project_overview_viec_chung_cong_ty.md",
+      "aliases": [
+        "Viec Chung Ngoai Du An",
+        "ViecChungNgoaiDuAn",
+        "G - ViecChungNgoaiDuAn"
+      ]
+    },
+    {
+      "canonical_name": "War Survival",
+      "workai_name": "G - WarSurvival",
+      "project_id": 115,
+      "issue_prefix": null,
+      "overview_path": "Project_Overview_Real_War.md",
+      "aliases": [
+        "War Survival",
+        "WarSurvival",
+        "Real War",
+        "G - WarSurvival"
+      ]
+    },
+    {
+      "canonical_name": "Zombie Hunter",
+      "workai_name": "G - ZOMBIEHUNTER",
+      "project_id": 39,
+      "issue_prefix": null,
+      "overview_path": null,
+      "aliases": [
+        "Zombie Hunter",
+        "ZOMBIEHUNTER",
+        "G - ZOMBIEHUNTER"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "batch_id": "workai-batch-a1bee13ef3d81927",
+  "source_row_count": 1,
+  "items": [
+    {
+      "row_number": 1,
+      "item_id": "workai-item-a1bee13ef3d81927-1",
+      "status": "completed",
+      "client_request_id": "workai-onboarding-2026-08-15-warsurvival-them-remote-config-tat-shop-va-gem",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "issue_type": "Story",
+      "task_name": "thêm remote config tắt shop và gem",
+      "summary": "Thêm Remote Config để tắt Shop và Gem theo cấu hình trong WarSurvival",
+      "start_date": "2026-08-15",
+      "estimated_hours": 6,
+      "optional_context": "",
+      "issue_id": 268203,
+      "issue_key": "GFW-535",
+      "blocks": [
+        {
+          "date": "2026-08-17",
+          "hours": 6,
+          "client_request_id": "workai-onboarding-2026-08-15-warsurvival-them-remote-config-tat-shop-va-gem-2026-08-17-6h",
+          "allocation_id": 90454,
+          "transition_id": "wf_to_do_in_progress",
+          "allocation_created": true,
+          "allocation_endpoint": "/time-allocations",
+          "assignee_id": 168
+        }
+      ],
+      "fallback_used": false,
+      "fallback_reason": null,
+      "description_source": "workai_ai",
+      "error": null
+    }
+  ]
+}

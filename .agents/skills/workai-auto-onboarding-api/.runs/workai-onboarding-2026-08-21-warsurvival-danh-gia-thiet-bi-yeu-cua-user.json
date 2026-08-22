@@ -1,0 +1,23 @@
+﻿{
+    "client_request_id":  "workai-onboarding-2026-08-21-warsurvival-danh-gia-thiet-bi-yeu-cua-user",
+    "project_id":  115,
+    "project_name":  "G - WarSurvival",
+    "summary":  "Đánh giá khả năng hỗ trợ thiết bị yếu của user trong WarSurvival",
+    "estimated_hours":  4,
+    "issue_id":  267445,
+    "issue_key":  "GFW-524",
+    "blocks":  [
+                   {
+                       "date":  "2026-08-18",
+                       "hours":  4,
+                       "client_request_id":  "workai-onboarding-2026-08-21-warsurvival-danh-gia-thiet-bi-yeu-cua-user-2026-08-18-4h",
+                       "transition_id":  "wf_to_do_in_progress",
+                       "allocation_created":  true,
+                       "allocation_endpoint":  "/time-allocations",
+                       "assignee_id":  168
+                   }
+               ],
+    "start_date":  "2026-08-18",
+    "fallback_used":  true,
+    "fallback_reason":  "AI_GENERATION_FAILED_TIMEOUT"
+}
