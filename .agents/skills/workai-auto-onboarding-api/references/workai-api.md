@@ -8,8 +8,6 @@ https://workai-be.horus.io.vn/api
 
 ## Auth
 
-Không hardcode token.
-
 ```http
 Authorization: Bearer <WORKAI_TOKEN>
 ```
@@ -183,7 +181,7 @@ Content-Type: application/json
 }
 ```
 
-Lấy `168` từ `meta.user_id`. Không tự đổi issue đang được gán cho user khác.
+Lấy ID từ input `assignee_id`; nếu input bỏ trống thì dùng `meta.user_id`. Workflow phân bổ giờ hiện yêu cầu ID đã resolve bằng `meta.user_id`. Không tự đổi issue đang được gán cho user khác.
 
 ## Transition Issue Status
 

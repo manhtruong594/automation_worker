@@ -1,62 +1,53 @@
 ---
 name: workai-auto-onboarding-api
-description: Tự động tạo một hoặc nhiều đầu việc nhập việc WorkAI bằng API từ input đơn hoặc bảng nhiều dòng và xếp lịch timeline. Sử dụng khi người dùng cung cấp dự án, đầu việc, ngày bắt đầu, thời lượng dự kiến và muốn tạo issue WorkAI, sinh mô tả/tiêu chí nghiệm thu, phân bổ giờ theo capacity, retry không tạo trùng.
+description: Tạo và xếp lịch một hoặc nhiều đầu việc WorkAI qua API với preflight toàn batch, nội dung/tiêu chí nghiệm thu, checkpoint và retry không tạo trùng. Dùng khi input có dự án, đầu việc, ngày bắt đầu, thời lượng dự kiến và cần tạo issue WorkAI hoặc tiếp tục một lần chạy dở.
 ---
 
 # WorkAI Auto Onboarding API
 
-## Auth
+## Mục Tiêu
 
-Gửi request với 1 trong 2 cách:
+Tạo issue, gán người thực hiện, chuyển trạng thái, phân bổ đủ giờ và lưu description/acceptance criteria. Ưu tiên:
+
+1. Không tạo side effect trước khi toàn bộ input qua preflight.
+2. Không tạo trùng khi retry hoặc khi response bị timeout.
+3. State local chỉ là checkpoint; server là nguồn xác nhận issue và allocation.
+4. Không ghi đè assignee hoặc allocation không chắc thuộc lần chạy hiện tại.
+
+Đọc `references/workai-api.md` trước khi gọi API. Khi cần diễn giải response, đọc thêm `references/api-response-shapes.md`. Không suy đoán endpoint hoặc field ngoài tài liệu này.
+
+## Xác Thực
+
+Dùng một trong hai biến môi trường:
+
+```text
+WORKAI_TOKEN
+WORKAI_SESSION_TOKEN
+```
+
+Gửi tương ứng:
 
 ```http
 Authorization: Bearer <WORKAI_TOKEN>
+Cookie: sessionToken=<WORKAI_SESSION_TOKEN>
 ```
 
-Hoac:
+## Input Và Chuẩn Hóa
 
-```http
-Cookie: sessionToken=4662|gcDTZ63I1PVZHqZhSIABRdJk2sr2Xe3TurePdCUTc6776120
-```
-
-Nếu token/cookie hết hạn:
-
-```json
-{
-  "success": false,
-  "message": "...",
-  "errors": {}
-}
-```
-
-## Dữ Liệu Đầu Vào
-
-Chấp nhận input đơn hoặc bảng nhiều dòng.
-
-### Input đơn
-
-Các trường tối thiểu:
+Nhận một object hoặc bảng nhiều dòng. Trường bắt buộc:
 
 ```yaml
 project_name: ""
 task_name: ""
 start_date: ""
 estimated_duration: ""
-optional_context: ""
 ```
 
-### Input bảng nhiều dòng
+Trường tùy chọn: `optional_context`, `issue_type`, `assignee_id`; `issue_type` mặc định `Story`.
 
-Mỗi dòng là một đầu việc độc lập. Chấp nhận bảng Markdown hoặc dữ liệu dạng hàng/cột tương đương. Các cột bắt buộc:
+`assignee_id` phải là số nguyên dương nếu được cung cấp. Nếu bỏ trống, resolve thành `meta.user_id` lấy từ request kiểm tra auth. API phân bổ giờ hiện chỉ hỗ trợ user hiện tại, nên toàn batch phải dừng ở preflight với `ASSIGNEE_NOT_CURRENT_USER` nếu `assignee_id != meta.user_id`.
 
-| project_name | task_name | start_date | estimated_duration |
-|---|---|---|---|
-| G - MOB.ERA | Làm màn hình đăng nhập | 21/08/2026 | 12h |
-| G - SKYDEFENSE | Sửa luồng nhận thưởng | 22/08/2026 | 1.5 ngày |
-
-Cột tùy chọn: `optional_context`, `issue_type`. `issue_type` mặc định là `Story` cho từng dòng.
-
-Chấp nhận tiêu đề tiếng Việt tương ứng và chuẩn hóa về tên trường chuẩn:
+Chuẩn hóa tiêu đề:
 
 | Tiêu đề input | Trường chuẩn |
 |---|---|
@@ -66,36 +57,20 @@ Chấp nhận tiêu đề tiếng Việt tương ứng và chuẩn hóa về tê
 | Thời lượng, Thời lượng dự kiến | `estimated_duration` |
 | Bối cảnh, Ghi chú | `optional_context` |
 | Loại đầu việc | `issue_type` |
+| ID người thực hiện | `assignee_id` |
 
-Không gộp các dòng giống nhau. Mỗi dòng phải có định danh ổn định dựa trên `project_id`, `task_name`, `start_date`, `estimated_hours` và số thứ tự xuất hiện để hai dòng cố ý trùng nội dung vẫn tạo thành hai đầu việc riêng.
+Quy tắc:
 
-Chấp nhận `start_date` dạng `YYYY-MM-DD`, `DD/MM/YYYY`, `DD-MM-YYYY`, `hôm nay`, `ngày mai`.
+- Giữ nguyên thứ tự và từng dòng, kể cả các dòng có nội dung giống nhau.
+- Nhận ngày `YYYY-MM-DD`, `DD/MM/YYYY`, `DD-MM-YYYY`, `hôm nay`, `ngày mai`. Chuẩn hóa thành `YYYY-MM-DD` theo `Asia/Bangkok`.
+- Nhận duration như `12h`, `4 tiếng`, `1.5 ngày`. Mặc định `1 ngày = 8 giờ`; ghi quy đổi này trong báo cáo nếu input dùng đơn vị ngày.
+- `estimated_hours` phải là số dương.
+- Khớp project không phân biệt hoa thường, dấu tiếng Việt, khoảng trắng, `-` và `_`.
+- Summary phải có ít nhất 51 ký tự. Nếu `task_name` ngắn, sinh theo mẫu `<Hành động> <tính năng/phân hệ> cho <bối cảnh hoặc kết quả>` từ overview/context; không thêm diễn đạt chung chung chỉ để đủ độ dài.
 
-Chấp nhận duration như `12h`, `4 tiếng`, `1.5 ngày`. Quy đổi sang `estimated_hours` dạng số giờ decimal.
+Danh sách project chuẩn:
 
-Trước mọi API có side effect, parse và kiểm tra toàn bộ các dòng. Gắn lỗi với số dòng và tên đầu việc. Nếu không parse chắc chắn được ngày, dự án hoặc thời lượng của bất kỳ dòng nào, hỏi lại một lần cho các dòng lỗi và chưa tạo đầu việc nào trong batch.
-
-## Xử Lý Batch
-
-Với bảng nhiều dòng:
-
-1. Giữ nguyên thứ tự dòng từ input.
-2. Chuẩn hóa và kiểm tra toàn bộ batch trước khi tạo issue.
-3. Tạo một `batch_id` ổn định từ nội dung bảng đã chuẩn hóa; không dùng timestamp làm thành phần duy nhất.
-4. Xử lý tuần tự từng dòng theo toàn bộ quy trình bên dưới: xác định project, đọc overview, tạo issue, phân bổ timeline, sinh description và acceptance criteria.
-5. Lưu state ngay sau mỗi side effect. Mỗi dòng có state và `client_request_id` riêng.
-6. Lỗi runtime ở một dòng không hoàn tác các dòng đã thành công và không ngăn xử lý các dòng hợp lệ còn lại, trừ `UNAUTHENTICATED`, `FORBIDDEN` hoặc lỗi cho thấy mọi request tiếp theo chắc chắn thất bại.
-7. Khi chạy lại cùng batch, đọc state và chỉ tiếp tục phần còn thiếu của từng dòng. Không tạo lại issue hoặc timeline block đã tồn tại.
-
-Không dùng endpoint batch nếu endpoint đó không được tài liệu tham chiếu xác nhận. Mặc định gọi API riêng cho từng dòng.
-
-## Quy Trình Bắt Buộc
-
-### 1. Xác Định Project
-
-Tra project theo danh sách chuẩn:
-
-| project_id | project_name | issue key |
+| project_id | project_name | project_key |
 |---:|---|---|
 | 85 | G - MOB.ERA | GTLU |
 | 81 | G - QUANLY-DIEUHANH-GAME | QLDH |
@@ -105,348 +80,175 @@ Tra project theo danh sách chuẩn:
 | 115 | G - WarSurvival | GFW |
 | 39 | G - ZOMBIEHUNTER | ZBH |
 
-Khớp tên không phân biệt hoa thường, dấu tiếng Việt, khoảng trắng, gạch ngang và gạch dưới.
+Nếu không khớp, báo `PROJECT_NOT_FOUND`. Nếu nhiều project khớp, hỏi người dùng chọn.
 
-Nếu nhiều project cùng khớp, hỏi người dùng chọn. Nếu không có project khớp, dừng và báo `PROJECT_NOT_FOUND`.
+## Định Danh Ổn Định
 
-### 2. Đọc Project Overview
+Tạo canonical identity từ `project_id`, `task_name` đã trim, `start_date`, `estimated_hours` và số thứ tự dòng. Băm SHA-256 canonical JSON có key theo thứ tự cố định:
 
-Luôn đọc overview trước khi tạo issue.
+- `item_id = workai-item-<12 ký tự hex đầu>`
+- `client_request_id = workai-onboarding-<start_date>-<12 ký tự hex đầu>`
 
-Tìm trong workspace theo thứ tự:
+Không đưa `summary`, `optional_context`, `assignee_id` hoặc nội dung sinh tự động vào identity: chỉnh câu chữ hoặc người thực hiện khi retry không được tạo ID issue mới. Tạo `batch_id` từ SHA-256 của toàn bộ input đã chuẩn hóa theo thứ tự dòng. Không dùng timestamp. Số thứ tự giúp hai dòng cố ý trùng nhau vẫn là hai item khác nhau.
 
-1. `project_overviews/<project-name>_<project-id>.md`
-2. File Markdown có tên chứa `project_overview` hoặc `overview`
+## Quy Trình
 
-Nếu chỉ có một overview khớp, đọc file đó và tiếp tục.
+### A. Preflight Toàn Batch — Không Side Effect
 
-Nếu nhiều overview cùng khớp, hỏi người dùng chọn file.
+Hoàn tất mọi bước sau trước `POST`/`PUT` đầu tiên:
 
-Nếu không có overview, chỉ tiếp tục khi người dùng cho phép rõ ràng. Khi tiếp tục không có overview, ghi rõ trong báo cáo.
+1. Parse, chuẩn hóa và validate toàn bộ dòng.
+2. Resolve project và summary.
+3. Tìm overview theo thứ tự:
+   - `project_overviews/<project-name>_<project-id>.md`
+   - file Markdown có tên chứa `project_overview` hoặc `overview`
+4. Nếu nhiều overview khớp, hỏi chọn. Nếu không có, chỉ tiếp tục khi người dùng cho phép rõ ràng và ghi vào báo cáo.
+5. Tạo ID ổn định; đọc hoặc khởi tạo state trong `.agents/skills/workai-auto-onboarding-api/.runs/`.
+6. Kiểm tra auth bằng request chỉ đọc; resolve `assignee_id` rỗng thành `meta.user_id`, rồi xác nhận mọi `assignee_id == meta.user_id`. Nếu khác, trả `ASSIGNEE_NOT_CURRENT_USER` và chưa tạo gì trong batch.
+7. Với từng tuần cần dùng, gọi `GET /time-allocations` một lần rồi dùng cache để lập kế hoạch capacity. Tuần là thứ Hai đến Chủ nhật. Khi nhiều item dùng cùng ngày, trừ cả reservation tạm của item trước khỏi capacity của item sau.
 
-### 3. Chuẩn Hóa Summary
+Nếu bất kỳ dòng nào có input/overview chưa rõ, hỏi lại một lần cho tất cả dòng lỗi và chưa tạo gì trong batch.
 
-`issue_type` mặc định là `Story`.
+Cache overview theo `project_id` và timeline theo `week_start`. Sau mỗi allocation thành công, cập nhật cache rồi đọc lại timeline để chống dữ liệu cũ.
 
-`summary` phải dài hơn 50 ký tự. Nếu `task_name` ngắn hơn, tự sinh summary dựa trên `task_name`, `project_overview`, `optional_context`.
+Ngày hợp lệ khi:
 
-Mẫu ưu tiên:
+- `meta.can_edit == true`;
+- không thuộc `meta.locked_periods`;
+- `daily_summary.status != weekend` và `is_day_off == false`;
+- `actual_work_hours > 0` hoặc `standard_hours > 0`.
 
-```text
-<Hành động> <tính năng/phân hệ> cho <bối cảnh dự án hoặc kết quả mong muốn>
-```
-
-Giữ summary cụ thể. Không nhồi mô tả dài vào summary.
-
-### 4. Tạo Issue
-
-Gọi:
-
-```http
-POST https://workai-be.horus.io.vn/api/issues
-Content-Type: application/json
-```
-
-Payload:
-
-```json
-{
-  "client_request_id": "workai-onboarding-2026-08-21-mob-era-login-ui",
-  "project_id": 85,
-  "project_name": "G - MOB.ERA",
-  "issue_type": "Story",
-  "summary": "Xay dung man hinh dang nhap cho quy trinh nguoi choi Mob Era",
-  "estimated_hours": 12,
-  "description": "",
-  "acceptance_criteria": [],
-  "optional_context": ""
-}
-```
-
-Yêu cầu:
-
-- Dùng `client_request_id` ổn định theo task để retry không tạo trùng.
-- Lưu lại `issue_id`, `issue_key` hoặc `jira_issue_key`.
-- Không tạo issue mới nếu run state đã có issue còn tồn tại.
-
-### 5. Đọc Timeline Theo Tuần
-
-Tính tuần chứa `start_date`, rồi gọi:
-
-```http
-GET https://workai-be.horus.io.vn/api/time-allocations?start_date=<week_start>&end_date=<week_end>
-```
-
-Dữ liệu cần dùng:
-
-- `data.allocations[date][]`
-- `data.daily_summary[]`
-- `meta.can_edit`
-- `meta.locked_periods`
-
-Chỉ xếp lịch khi:
-
-- `meta.can_edit == true`
-- Ngày không nằm trong `locked_periods`
-- `daily_summary.status` không phải `weekend`
-- `is_day_off == false`
-- `actual_work_hours > 0` hoặc `standard_hours > 0`
-- Còn capacity: ưu tiên `idle_hours`; nếu thiếu, dùng `standard_hours - total_allocated_hours` khi hợp lệ.
-
-Không ghi đè block có sẵn.
-
-### 6. Phân Bổ Giờ
-
-Phân bổ từ `start_date` theo ngày tăng dần.
-
-Với mỗi ngày:
+Tính capacity:
 
 ```text
+available_hours = max(0, idle_hours)
+```
+
+Nếu `idle_hours` thiếu hoặc không hợp lệ:
+
+```text
+capacity = actual_work_hours nếu > 0, ngược lại standard_hours
 available_hours = max(0, capacity - total_allocated_hours)
-hours_to_add = min(remaining_hours, available_hours)
 ```
 
-Nếu ngày hiện tại hết capacity mà `remaining_hours > 0`, đọc tuần tiếp theo và tiếp tục.
+Không dùng capacity âm và không ghi đè block có sẵn.
 
-Tổng block đã tạo phải bằng `estimated_hours`, trừ khi hết ngày hợp lệ hoặc API trả lỗi chặn.
+### B. Reconcile Trước Khi Ghi
 
-### 7. Gán Người Thực Hiện Và Chuyển Trạng Thái
+Với từng item theo thứ tự input:
 
-Lấy user hiện tại từ `meta.user_id` của timeline. Đọc issue bằng `GET /issues/<issue_id>`:
+1. Nếu state có `issue_id`, gọi `GET /issues/<issue_id>` để xác minh.
+2. Đọc timeline từ `start_date`, lọc allocation theo `issue_id`, rồi đồng bộ `allocation_id`, ngày, giờ vào state.
+3. Đọc issue detail để đồng bộ assignee, status, description và acceptance criteria.
+4. Tính `remaining_hours = estimated_hours - tổng planned_hours trên server`.
+5. Nếu issue trong state không còn tồn tại, đặt lỗi `ISSUE_NOT_FOUND`; không tự tạo issue thay thế khi chưa báo người dùng.
 
-- Nếu `assignee_id` rỗng, gán cho user hiện tại:
+Không xem state local hoặc response transition là bằng chứng allocation đã tồn tại.
 
-```http
-PUT https://workai-be.horus.io.vn/api/issues/<issue_id>
-Content-Type: application/json
-```
+### C. Thực Thi Từng Item
+
+Ghi state atomically ngay sau mỗi side effect thành công: ghi file tạm cùng thư mục, flush, rồi rename thay thế.
+
+1. **Tạo issue** — Nếu chưa có issue được server xác nhận, `POST /issues` với `client_request_id` ổn định. Lưu ngay `issue_id` và `issue_key`/`jira_issue_key`.
+2. **Gán người thực hiện** — Dùng `assignee_id` đã resolve ở preflight. Nếu issue chưa có assignee, `PUT /issues/<issue_id>` với `assignee_id`. Nếu issue đã gán đúng ID, không gọi lại. Nếu đã gán người khác, dừng item và yêu cầu xác nhận; không tự đổi.
+3. **Chuyển trạng thái** — Nếu issue chưa `In Progress` và transition phù hợp, gọi `POST /issues/<issue_id>/transition` với `transition_id=wf_to_do_in_progress`. Không gọi lại nếu đã `In Progress`.
+4. **Tạo allocation** — Từ `start_date`, theo ngày tăng dần:
+
+   ```text
+   hours_to_add = min(remaining_hours, available_hours)
+   ```
+
+   Trước mỗi `POST /time-allocations`, kiểm tra server theo `issue_id + allocation_date`:
+   - đã đúng giờ: ghi state, không POST;
+   - thuộc chính run nhưng sai giờ: `PUT /time-allocations/<allocation_id>`;
+   - không chắc ownership: không sửa; thử ngày hợp lệ tiếp theo.
+
+   Ngay trước mutation, đọc lại ngày/tuần và tính lại capacity để xử lý thay đổi đồng thời trên server. Dùng `client_request_id` ổn định theo item, ngày và giờ. Sau mỗi POST/PUT, lưu checkpoint rồi đọc lại timeline. Nếu hết tuần mà còn giờ, đọc tuần tiếp theo.
+5. **Sinh nội dung** — Đọc issue, rồi gọi `POST /issues/quick-create/suggest-description` với `project_key` và overview. Nếu timeout hoặc `AI_GENERATION_FAILED`, tự sinh fallback: description 1–3 câu và 3–5 acceptance criteria kiểm chứng được; ghi fallback vào báo cáo.
+6. **Lưu nội dung** — `PUT /issues/<issue_id>` với description và acceptance criteria. Đọc lại issue; chỉ đặt `content_applied=true` khi description không rỗng và `acceptance_criteria_items` có dữ liệu.
+7. **Hoàn tất** — Chỉ đặt `completed` khi issue tồn tại, assignee trên server bằng `assignee_id` đã resolve, tổng allocation server bằng `estimated_hours`, và nội dung đã được xác minh.
+
+Xử lý tuần tự. Lỗi runtime ở một item không chặn item hợp lệ tiếp theo, trừ lỗi auth/quyền hoặc lỗi chứng minh mọi request tiếp theo sẽ thất bại.
+
+Không dùng endpoint batch khi tài liệu tham chiếu chưa xác nhận; gọi API riêng cho từng item.
+
+## Retry Sau Timeout Hoặc Lỗi Mơ Hồ
+
+Không retry mutation ngay:
+
+- Sau timeout tạo issue: gọi lại `POST /issues` chỉ với cùng `client_request_id`; không sinh ID mới.
+- Sau timeout tạo/sửa allocation: đọc timeline và kiểm tra `issue_id + allocation_date` trước.
+- Sau timeout PUT issue: đọc issue detail trước.
+- Với `IDEMPOTENCY_CONFLICT`: reconcile server/state, không retry mù.
+- Với `INTERNAL_ERROR`: dừng side effect cho item, lưu bước cuối đã xác minh và báo cáo.
+
+## State
+
+Một file cho mỗi batch: `.runs/<batch_id>.json`. Input đơn vẫn dùng schema batch với một item.
 
 ```json
 {
-  "assignee_id": 168
-}
-```
-
-- Nếu issue đã gán cho user khác, không tự đổi assignee; dừng dòng đó và yêu cầu xác nhận.
-- Lưu `assignee_id` vào state ngay sau khi gán thành công.
-
-Nếu cần chuyển issue từ `To Do` sang `In Progress`, gọi:
-
-```http
-POST https://workai-be.horus.io.vn/api/issues/<issue_id>/transition
-```
-
-```json
-{
-  "client_request_id": "workai-onboarding-2026-08-21-mob-era-login-ui-transition-in-progress",
-  "project_id": 85,
-  "issue_key": "GTLU-2716",
-  "transition_id": "wf_to_do_in_progress",
-  "date": "2026-08-21",
-  "hours": 8
-}
-```
-
-`transition_id` là bắt buộc. Endpoint transition chỉ dùng để đổi trạng thái; không coi response transition là bằng chứng timeline block đã được tạo. Nếu issue đã `In Progress`, không gọi lại transition này.
-
-### 8. Thêm Timeline Block
-
-Tạo allocation thực bằng:
-
-```http
-POST https://workai-be.horus.io.vn/api/time-allocations
-Content-Type: application/json
-```
-
-```json
-{
-  "client_request_id": "workai-onboarding-2026-08-21-mob-era-login-ui-2026-08-21-8h",
-  "issue_id": 2716,
-  "allocation_date": "2026-08-21",
-  "planned_hours": 8
-}
-```
-
-Yêu cầu:
-
-- Issue phải được gán cho `meta.user_id` trước khi tạo allocation.
-- WorkAI chỉ cho một allocation trên mỗi cặp `issue_id + allocation_date`. Trước khi `POST`, đọc `data.allocations[date][]` và kiểm tra cặp này.
-- Nếu allocation của issue đã tồn tại đúng số giờ, ghi nhận vào state và không tạo lại.
-- Nếu allocation của chính run này đã tồn tại nhưng sai số giờ, sửa bằng `PUT /time-allocations/<allocation_id>` với `planned_hours` đúng. Nếu không chắc ownership, không ghi đè; bỏ qua ngày và thử ngày hợp lệ tiếp theo.
-- `client_request_id` phải ổn định, nhưng không dựa riêng vào nó để chống trùng; luôn đối chiếu allocation server.
-- Sau mỗi `POST` hoặc `PUT`, lưu `allocation_id`, ngày và giờ vào state, rồi đọc lại timeline để xác minh.
-- Nếu API lỗi sau khi issue đã tạo, báo rõ issue đã tồn tại để tránh tạo trùng.
-
-### 9. Sinh Và Lưu Description, Acceptance Criteria
-
-Gọi api mở issue vừa tạo trước
-```http
-GET https://workai-be.horus.io.vn/api/issues/<issue_id>
-```
-
-Sau đó sinh description và acceptance criteria bằng api:
-```http
-POST https://workai-be.horus.io.vn/api/issues/quick-create/suggest-description
-```
-
-```json
-{
-  "project_id": 85,
-  "project_key": "GTLU",
-  "project_name": "G - MOB.ERA",
-  "issue_type": "Story",
-  "summary": "Xay dung man hinh dang nhap cho quy trinh nguoi choi Mob Era",
-  "estimated_hours": 12,
-  "project_overview": "Noi dung project_overview da doc tu workspace...",
-  "optional_context": "Can ho tro email/password va thong bao loi ngan gon."
-}
-```
-
-`project_key` là bắt buộc và lấy từ danh sách project chuẩn (`GTLU`, `GFW`, `SKYD`...).
-
-Nếu API timeout hoặc trả `AI_GENERATION_FAILED`, được tự sinh nội dung thay thế ngắn gọn:
-
-- Description: 1-3 câu, nêu phạm vi chính và kết quả mong muốn.
-- Acceptance criteria: 3-5 tiêu chí kiểm chứng được.
-
-Báo rõ `AI_GENERATION_FAILED` hoặc timeout trong kết quả cuối nếu dùng fallback.
-
-Sau khi có nội dung từ WorkAI AI hoặc fallback, lưu vào issue:
-
-```http
-PUT https://workai-be.horus.io.vn/api/issues/<issue_id>
-Content-Type: application/json
-```
-
-```json
-{
-  "description": "Bối cảnh, phạm vi và kết quả mong muốn...",
-  "acceptance_criteria": [
-    {
-      "text": "Tiêu chí kiểm chứng được",
-      "weight": 1,
-      "evidence_types": ["link", "image"],
-      "evidence_hint": "Bằng chứng cần đính kèm"
-    }
-  ]
-}
-```
-
-Đọc lại `GET /issues/<issue_id>` và chỉ ghi `content_applied=true` khi `description` không rỗng và `acceptance_criteria_items` có dữ liệu.
-
-## Retry Và State
-
-Lưu state trong thư mục `.runs/` của skill:
-
-```text
-.agents/skills/workai-auto-onboarding-api/.runs/
-```
-
-Với input bảng, lưu một file batch chứa trạng thái từng dòng. State tối thiểu:
-
-```json
-{
+  "schema_version": 1,
   "batch_id": "workai-batch-...",
-  "source_row_count": 2,
+  "source_row_count": 1,
   "items": [
     {
       "row_number": 1,
       "item_id": "workai-item-...",
       "status": "pending",
+      "last_verified_step": "preflight",
       "client_request_id": "workai-onboarding-...",
       "project_id": 85,
       "project_name": "G - MOB.ERA",
-      "summary": "",
+      "project_key": "GTLU",
+      "summary": "...",
+      "start_date": "2026-08-21",
       "estimated_hours": 12,
       "issue_id": null,
       "issue_key": null,
-      "assignee_id": null,
+      "assignee_id": 168,
       "blocks": [],
       "content_applied": false,
+      "fallback_used": false,
       "error": null
     }
   ]
 }
 ```
 
-`status` là một trong: `pending`, `issue_created`, `partially_scheduled`, `completed`, `failed`. Ghi file state theo cách atomic để tránh mất trạng thái batch khi tiến trình bị ngắt.
+`status`: `pending`, `issue_created`, `partially_scheduled`, `completed`, `failed`.
 
-State tối thiểu:
+Mỗi phần tử `blocks` gồm `date`, `hours`, `client_request_id`, `allocation_id` và `verified_at`; chỉ cập nhật từ response server đã xác minh.
 
-```json
-{
-  "client_request_id": "",
-  "project_id": 0,
-  "project_name": "",
-  "summary": "",
-  "estimated_hours": 0,
-  "issue_id": null,
-  "issue_key": null,
-  "assignee_id": null,
-  "blocks": [
-    {
-      "date": "2026-08-21",
-      "hours": 8,
-      "client_request_id": "",
-      "allocation_id": null
-    }
-  ],
-  "content_applied": false
-}
-```
+Không lưu token, cookie hoặc toàn bộ response chứa dữ liệu không cần thiết. Không xóa state thành công; state là bằng chứng retry/audit.
 
-Khi chạy lại:
+## Xử Lý Lỗi
 
-1. Đọc state local.
-2. Nếu đã có `issue_id` hoặc `issue_key`, xác minh issue còn tồn tại.
-3. Đọc timeline theo từng tuần từ `start_date`; lọc allocation theo `issue_id`. Không dùng block local hoặc response transition làm nguồn xác nhận duy nhất.
-4. Đồng bộ state từ allocation server, gồm `allocation_id`, `allocation_date` và `planned_hours`.
-5. Tính `remaining_hours = estimated_hours - tổng planned_hours trên server`.
-6. Chỉ thêm phần còn thiếu và không `POST` lần hai cho cùng `issue_id + allocation_date`.
-7. Đọc issue detail để xác minh assignee, description và acceptance criteria.
-8. Không tạo issue mới nếu issue cũ còn tồn tại.
+| Code/tình huống | Hành động |
+|---|---|
+| `UNAUTHENTICATED` | Dừng batch; yêu cầu credential mới. |
+| `FORBIDDEN` | Dừng batch; báo quyền còn thiếu. |
+| `VALIDATION_ERROR` | Sửa payload nếu xác định chắc field lỗi; nếu không, dừng item. |
+| `PROJECT_NOT_FOUND` | Không tạo gì; hỏi lại project. |
+| `ASSIGNEE_NOT_CURRENT_USER` | Không tạo gì; dùng `meta.user_id` hoặc bỏ trống `assignee_id`. |
+| `ISSUE_NOT_FOUND` khi retry | Báo state cũ không hợp lệ; không tự tạo lại. |
+| `AI_GENERATION_FAILED`/timeout | Dùng fallback; tiếp tục và báo rõ. |
+| `TIMELINE_NOT_FOUND` | Dừng item; giữ issue/state đã tạo. |
+| `NON_WORKING_DAY` | Bỏ qua ngày; thử ngày tiếp theo. |
+| `INSUFFICIENT_DAY_CAPACITY` | Thử ngày tiếp theo. |
+| `IDEMPOTENCY_CONFLICT` | Reconcile server/state. |
+| `INTERNAL_ERROR` | Dừng side effect item; báo bước cuối đã xác minh. |
 
+## Báo Cáo
 
-## Mã Lỗi Cần Xử Lý
+Input đơn: dự án, issue key, summary cuối, `assignee_id`, ngày bắt đầu, tổng giờ, phân bổ theo ngày, fallback/cảnh báo và file state.
 
-- `UNAUTHENTICATED`: yêu cầu đăng nhập/lấy token mới.
-- `FORBIDDEN`: không có quyền tạo issue hoặc sửa timeline.
-- `VALIDATION_ERROR`: sửa payload, đặc biệt `summary`, `project_id`, `estimated_hours`.
-- `PROJECT_NOT_FOUND`: dừng, hỏi lại project.
-- `ISSUE_NOT_FOUND`: nếu retry, báo state cũ không còn hợp lệ trước khi tạo lại.
-- `AI_GENERATION_FAILED`: dùng fallback nội dung ngắn, báo trong kết quả.
-- `TIMELINE_NOT_FOUND`: dừng, báo không đọc được timeline tuần.
-- `NON_WORKING_DAY`: bỏ qua ngày đó, thử ngày tiếp theo.
-- `INSUFFICIENT_DAY_CAPACITY`: thử ngày tiếp theo.
-- `IDEMPOTENCY_CONFLICT`: đọc state server/local, không retry mù.
-- `INTERNAL_ERROR`: không tạo thêm side effect; báo bước cuối đã hoàn tất.
+Input bảng:
 
-## Báo Cáo Hoàn Tất
+| Dòng | Dự án | Issue key | Summary | Assignee ID | Tổng giờ | Phân bổ | Trạng thái/Lỗi |
+|---:|---|---|---|---:|---:|---|---|
 
-Báo cáo input đơn ngắn:
-
-- Dự án.
-- Issue key.
-- Summary cuối cùng.
-- Ngày bắt đầu.
-- Tổng giờ dự kiến.
-- Phân bổ theo ngày.
-- Fallback đã dùng, nếu có.
-
-Với input bảng, báo cáo một dòng cho mỗi đầu việc:
-
-| Dòng | Dự án | Issue key | Summary | Tổng giờ | Phân bổ | Trạng thái/Lỗi |
-|---:|---|---|---|---:|---|---|
-
-Sau bảng, ghi tổng số dòng `completed`, `failed`, `partially_scheduled` và đường dẫn file state batch. Không chỉ báo thành công chung nếu có dòng thất bại.
-
-Nếu thất bại, báo:
-
-- Bước đang chặn.
-- Issue đã tạo hay chưa.
-- Block timeline đã thêm.
-- File state local.
-- Hành động cần làm tiếp.
+Ghi tổng `completed`, `failed`, `partially_scheduled` và đường dẫn file state. Khi lỗi, nêu bước chặn, issue đã tạo hay chưa, block đã thêm, checkpoint cuối và hành động tiếp theo. Không báo thành công chung nếu còn item chưa hoàn tất.
 
 ## Tham Chiếu
 

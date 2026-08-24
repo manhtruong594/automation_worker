@@ -16,7 +16,7 @@ Mỗi dự án cần có file `project_overview*.md` trong workspace để Codex
 
 ## Cách dùng
 
-Gửi cho Codex một đầu việc hoặc bảng nhiều đầu việc với bốn trường bắt buộc:
+Gửi cho Codex một đầu việc hoặc bảng nhiều đầu việc với bốn trường bắt buộc và các trường tùy chọn:
 
 ```yaml
 project_name: G - MOB.ERA
@@ -24,7 +24,15 @@ task_name: Hoàn thiện cơ chế nâng cấp lính trong trận
 start_date: 25/08/2026
 estimated_duration: 12h
 optional_context: Ưu tiên luồng nâng cấp bằng quảng cáo
+issue_type: Story
+assignee_id: 168
 ```
+
+| Trường tùy chọn | Ý nghĩa | Mặc định/ràng buộc |
+|---|---|---|
+| `optional_context` | Bối cảnh hoặc ghi chú bổ sung | Để trống nếu không có |
+| `issue_type` | Loại đầu việc WorkAI | `Story` |
+| `assignee_id` | ID người thực hiện | Số nguyên dương; để trống để dùng `meta.user_id`. Hiện phải bằng user đang xác thực để phân bổ giờ. |
 
 Có thể dùng ngày `YYYY-MM-DD`, `DD/MM/YYYY`, `DD-MM-YYYY`, `hôm nay`, `ngày mai`; thời lượng dạng `4h`, `4 tiếng`, `1.5 ngày`. Một ngày được tính là 8 giờ.
 

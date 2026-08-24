@@ -181,7 +181,7 @@ PUT /time-allocations/<allocation_id>
 Quy tắc đã xác nhận:
 
 - `POST /issues/<issue_id>/transition` yêu cầu `transition_id`; `wf_to_do_in_progress` chỉ khả dụng khi issue chưa `In Progress`. Không coi transition là bằng chứng allocation.
-- `POST /time-allocations` yêu cầu `issue_id`, `allocation_date`, `planned_hours`; issue phải được gán cho user hiện tại.
+- `POST /time-allocations` yêu cầu `issue_id`, `allocation_date`, `planned_hours`; issue phải được gán cho user hiện tại. Vì vậy, `assignee_id` tùy chọn phải bằng `meta.user_id`; nếu bỏ trống thì resolve thành `meta.user_id` trước khi tạo side effect.
 - Một issue chỉ có một allocation trên một ngày. Nếu đã tồn tại, API trả `422` với message `Issue này đã được phân bổ cho ngày này.`
 - `PUT /time-allocations/<allocation_id>` nhận `planned_hours` để sửa allocation đã xác định.
 - `POST /issues/quick-create/suggest-description` yêu cầu `project_key`.
