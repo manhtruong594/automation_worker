@@ -64,6 +64,29 @@ Tạo và xếp lịch các đầu việc WorkAI sau:
 
 Codex sẽ kiểm tra toàn bộ input trước khi ghi dữ liệu, tự chia thời lượng sang các ngày làm việc còn capacity và báo lại issue key cùng phân bổ theo ngày.
 
+## Cập nhật 26/08/2026
+
+Thêm skill [`workai-complete-issues-api`](.agents/skills/workai-complete-issues-api/SKILL.md) để hoàn thành một hoặc nhiều issue WorkAI cùng lúc từ bảng có cột `issue_id`:
+
+| issue_id | Tên việc |
+|---:|---|
+| 2716 | Hoàn thiện đăng nhập |
+| 2717 | Kiểm thử đăng nhập |
+
+Ví dụ yêu cầu:
+
+```text
+Hoàn thành các issue WorkAI trong bảng trên.
+```
+
+Skill kiểm tra toàn bộ ID trước khi cập nhật, chỉ xử lý một lần với ID trùng, bỏ qua issue đã hoàn thành và xác minh lại trạng thái sau mỗi request. Mỗi issue chưa hoàn thành được gọi qua `POST /api/issues/<issue_id>/transition` với payload:
+
+```json
+{"transition_id":"wf_in_progress_done"}
+```
+
+Kết quả được báo theo từng dòng với các trạng thái `completed`, `already_completed`, `duplicate`, `failed` hoặc `not_attempted`. Skill dùng cùng biến môi trường `WORKAI_TOKEN` hoặc `WORKAI_SESSION_TOKEN` đã hướng dẫn ở phần Chuẩn bị.
+
 ## Retry và kiểm tra
 
 Checkpoint được lưu tại `.agents/skills/workai-auto-onboarding-api/.runs/`. Khi lần chạy bị timeout hoặc dở dang, yêu cầu Codex tiếp tục từ checkpoint; không xóa file state hoặc tạo lại thủ công để tránh trùng issue.

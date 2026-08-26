@@ -1,0 +1,3 @@
+interface:
+  display_name: "Hoàn thành issue WorkAI"
+  short_description: "Hoàn thành nhiều issue WorkAI từ bảng qua API"
