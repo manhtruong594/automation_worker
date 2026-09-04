@@ -185,4 +185,5 @@ Quy tắc đã xác nhận:
 - Một issue chỉ có một allocation trên một ngày. Nếu đã tồn tại, API trả `422` với message `Issue này đã được phân bổ cho ngày này.`
 - `PUT /time-allocations/<allocation_id>` nhận `planned_hours` để sửa allocation đã xác định.
 - `POST /issues/quick-create/suggest-description` yêu cầu `project_key`.
+- `POST /issues/quick-create/suggest-description` dùng client timeout 30 giây. Response thành công trả `data.suggested_description` và `data.suggested_acceptance_criteria`; map hai field này sang `description` và `acceptance_criteria`. Chỉ fallback khi timeout, `AI_GENERATION_FAILED`, hoặc dữ liệu vẫn thiếu sau mapping.
 - `PUT /issues/<issue_id>` lưu `assignee_id`, `description` và `acceptance_criteria`.

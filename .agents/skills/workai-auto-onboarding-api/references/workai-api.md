@@ -42,6 +42,29 @@ Request:
 
 `project_key` là bắt buộc.
 
+Client timeout cho endpoint này là 30 giây.
+
+Response thành công:
+
+```json
+{
+  "success": true,
+  "data": {
+    "suggested_description": "Mô tả được sinh...",
+    "suggested_acceptance_criteria": [
+      {
+        "text": "Tiêu chí kiểm chứng được",
+        "weight": 1,
+        "evidence_types": ["link"],
+        "evidence_hint": "Bằng chứng cần cung cấp"
+      }
+    ]
+  }
+}
+```
+
+Map `data.suggested_description` sang payload `description` và `data.suggested_acceptance_criteria` sang payload `acceptance_criteria`. Không đọc hai field không tồn tại `data.description` hoặc `data.acceptance_criteria` từ response gợi ý.
+
 Failure mẫu:
 
 ```json
@@ -53,7 +76,7 @@ Failure mẫu:
 }
 ```
 
-Trong dữ liệu thử gần nhất, request endpoint này timeout sau 75 giây. Skill phải có fallback tự sinh description và acceptance criteria.
+Chỉ dùng fallback tự sinh description và acceptance criteria khi request timeout sau 30 giây, API trả `AI_GENERATION_FAILED`, hoặc response `success=true` vẫn thiếu dữ liệu sau khi map đúng hai field `suggested_*`.
 
 ## Create Issue
 

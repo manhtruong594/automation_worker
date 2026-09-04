@@ -164,7 +164,7 @@ Ghi state atomically ngay sau mỗi side effect thành công: ghi file tạm cù
    - không chắc ownership: không sửa; thử ngày hợp lệ tiếp theo.
 
    Ngay trước mutation, đọc lại ngày/tuần và tính lại capacity để xử lý thay đổi đồng thời trên server. Dùng `client_request_id` ổn định theo item, ngày và giờ. Sau mỗi POST/PUT, lưu checkpoint rồi đọc lại timeline. Nếu hết tuần mà còn giờ, đọc tuần tiếp theo.
-5. **Sinh nội dung** — Đọc issue, rồi gọi `POST /issues/quick-create/suggest-description` với `project_key` và overview. Nếu timeout hoặc `AI_GENERATION_FAILED`, tự sinh fallback: description 1–3 câu và 3–5 acceptance criteria kiểm chứng được; ghi fallback vào báo cáo.
+5. **Sinh nội dung** — Đọc issue, rồi gọi `POST /issues/quick-create/suggest-description` với `project_key` và overview; đặt client timeout đúng 30 giây. Với response thành công, map `data.suggested_description` thành description và `data.suggested_acceptance_criteria` thành acceptance criteria. Chỉ dùng fallback khi request timeout sau 30 giây, API trả `AI_GENERATION_FAILED`, hoặc response thành công vẫn thiếu description/acceptance criteria sau khi map đúng hai field `suggested_*`. Fallback gồm description 1–3 câu và 3–5 acceptance criteria kiểm chứng được; ghi fallback và lý do vào báo cáo.
 6. **Lưu nội dung** — `PUT /issues/<issue_id>` với description và acceptance criteria. Đọc lại issue; chỉ đặt `content_applied=true` khi description không rỗng và `acceptance_criteria_items` có dữ liệu.
 7. **Hoàn tất** — Chỉ đặt `completed` khi issue tồn tại, assignee trên server bằng `assignee_id` đã resolve, tổng allocation server bằng `estimated_hours`, và nội dung đã được xác minh.
 
@@ -245,7 +245,7 @@ Input đơn: dự án, issue key, summary cuối, `assignee_id`, ngày bắt đ�
 
 Input bảng:
 
-| Dòng | Dự án | Issue key | Summary | Assignee ID | Tổng giờ | Phân bổ | Trạng thái/Lỗi |
+| Dòng | Dự án | Issue Id | Summary | Assignee ID | Tổng giờ | Phân bổ | Trạng thái/Lỗi |
 |---:|---|---|---|---:|---:|---|---|
 
 Ghi tổng `completed`, `failed`, `partially_scheduled` và đường dẫn file state. Khi lỗi, nêu bước chặn, issue đã tạo hay chưa, block đã thêm, checkpoint cuối và hành động tiếp theo. Không báo thành công chung nếu còn item chưa hoàn tất.

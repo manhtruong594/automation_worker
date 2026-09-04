@@ -4,16 +4,9 @@ Project dùng Codex để tạo issue, gán người thực hiện, chuyển san
 
 ## Chuẩn bị
 
-Thiết lập đúng một biến môi trường. Chỉ nhập giá trị token, không thêm `Bearer ` hoặc `sessionToken=`:
+### Nếu cần cấu hình token thủ công, thiết lập đúng một biến môi trường.
 
-```powershell
-# Chỉ áp dụng cho cửa sổ PowerShell hiện tại
-$env:WORKAI_TOKEN = '<token>'
-# hoặc
-$env:WORKAI_SESSION_TOKEN = '<session-token>'
-```
-
-Lưu lâu dài cho tài khoản Windows:
+Chỉ nhập giá trị token, không thêm `Bearer ` hoặc `sessionToken=`:
 
 ```powershell
 $tokenMoi = Read-Host 'Dán token mới'
@@ -25,13 +18,12 @@ Remove-Variable tokenMoi
 
 ```powershell
 if ($env:WORKAI_TOKEN) { "WORKAI_TOKEN đã nạp, độ dài: $($env:WORKAI_TOKEN.Length)" }
-elseif ($env:WORKAI_SESSION_TOKEN) { "WORKAI_SESSION_TOKEN đã nạp, độ dài: $($env:WORKAI_SESSION_TOKEN.Length)" }
+if ($env:WORKAI_SESSION_TOKEN) { "WORKAI_SESSION_TOKEN đã nạp, độ dài: $($env:WORKAI_SESSION_TOKEN.Length)" }
 else { 'Chưa có token trong phiên hiện tại' }
 ```
-
 Không lưu hoặc gửi token trong Git, file cấu hình hay chat.
 
-Mỗi dự án cần có file `project_overview*.md` trong workspace để Codex tạo summary và nội dung đúng ngữ cảnh.
+### Mỗi dự án cần có file `project_overview*.md` trong workspace để Codex tạo summary và nội dung đúng ngữ cảnh.
 
 ## Cách dùng
 
