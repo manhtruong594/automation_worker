@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "batch_id": "workai-batch-ee8f2e42c442da38",
+  "source_row_count": 4,
+  "items": [
+    {
+      "row_number": 1,
+      "item_id": "workai-item-1a6cc00f5863",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-29-1a6cc00f5863",
+      "project_id": 85,
+      "project_name": "G - MOB.ERA",
+      "project_key": "GTLU",
+      "task_name": "build game ios bản 0,3,2",
+      "summary": "Build và kiểm tra game MOB.ERA trên iOS phiên bản 0,3,2",
+      "start_date": "2026-09-29",
+      "estimated_hours": 6,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 294812,
+      "issue_key": "GTLU-3296",
+      "blocks": [
+        {
+          "date": "2026-09-29",
+          "hours": 6.0,
+          "allocation_id": 120116,
+          "verified_at": "2026-10-01T16:28:03.045802",
+          "client_request_id": "workai-onboarding-2026-09-29-1a6cc00f5863-2026-09-29-6h"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "error": null,
+      "planned_blocks": [
+        {
+          "date": "2026-09-29",
+          "hours": 6
+        }
+      ],
+      "verified_server_status": "In Progress"
+    },
+    {
+      "row_number": 2,
+      "item_id": "workai-item-d0acae5cb8cc",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-30-d0acae5cb8cc",
+      "project_id": 85,
+      "project_name": "G - MOB.ERA",
+      "project_key": "GTLU",
+      "task_name": "build game android bản 0,0,3,9",
+      "summary": "Build và kiểm tra game MOB.ERA trên Android phiên bản 0,0,3,9",
+      "start_date": "2026-09-30",
+      "estimated_hours": 6,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 294813,
+      "issue_key": "GTLU-3297",
+      "blocks": [
+        {
+          "date": "2026-09-30",
+          "hours": 6.0,
+          "allocation_id": 120117,
+          "verified_at": "2026-10-01T16:28:39.331388",
+          "client_request_id": "workai-onboarding-2026-09-30-d0acae5cb8cc-2026-09-30-6h"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "error": null,
+      "planned_blocks": [
+        {
+          "date": "2026-09-30",
+          "hours": 6
+        }
+      ],
+      "verified_server_status": "In Progress"
+    },
+    {
+      "row_number": 3,
+      "item_id": "workai-item-2d4b02fc5c89",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-30-2d4b02fc5c89",
+      "project_id": 85,
+      "project_name": "G - MOB.ERA",
+      "project_key": "GTLU",
+      "task_name": "Mode chơi mới era rush - fix lỗi, tối ưu và viết docs",
+      "summary": "Sửa lỗi, tối ưu và viết tài liệu cho mode chơi mới era rush trong MOB.ERA",
+      "start_date": "2026-09-30",
+      "estimated_hours": 6,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 294814,
+      "issue_key": "GTLU-3298",
+      "blocks": [
+        {
+          "date": "2026-09-30",
+          "hours": 2.98,
+          "allocation_id": 120118,
+          "verified_at": "2026-10-01T16:29:11.888624",
+          "client_request_id": "workai-onboarding-2026-09-30-2d4b02fc5c89-2026-09-30-2.98h"
+        },
+        {
+          "date": "2026-10-01",
+          "hours": 3.02,
+          "allocation_id": 120119,
+          "verified_at": "2026-10-01T16:29:11.888624",
+          "client_request_id": "workai-onboarding-2026-09-30-2d4b02fc5c89-2026-10-01-3.02h"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "error": null,
+      "planned_blocks": [
+        {
+          "date": "2026-09-30",
+          "hours": 2.98
+        },
+        {
+          "date": "2026-10-01",
+          "hours": 3.02
+        }
+      ],
+      "verified_server_status": "In Progress"
+    },
+    {
+      "row_number": 4,
+      "item_id": "workai-item-c77b4767a5f2",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-10-01-c77b4767a5f2",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "setup boss undying",
+      "summary": "Thiết lập boss undying cho gameplay CrowdBattle trong WarSurvival",
+      "start_date": "2026-10-01",
+      "estimated_hours": 4,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 294816,
+      "issue_key": "GFW-1187",
+      "blocks": [
+        {
+          "date": "2026-10-01",
+          "hours": 4.0,
+          "allocation_id": 120121,
+          "verified_at": "2026-10-01T16:29:47.668659",
+          "client_request_id": "workai-onboarding-2026-10-01-c77b4767a5f2-2026-10-01-4h"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null,
+      "planned_blocks": [
+        {
+          "date": "2026-10-01",
+          "hours": 4
+        }
+      ],
+      "fallback_reason": "CURL_ERROR_28",
+      "verified_server_status": "In Progress"
+    }
+  ],
+  "preflight_completed": true,
+  "verified_completed_count": 4
+}

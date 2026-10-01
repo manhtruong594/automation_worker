@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "batch_id": "workai-batch-b167e9c712c63b6f",
+  "source_row_count": 9,
+  "items": [
+    {
+      "row_number": 1,
+      "item_id": "workai-item-40540e6eb5f3",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-04-40540e6eb5f3",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "thêm logic bonus gift",
+      "summary": "Thêm logic Bonus Gift sau lần đầu hoàn thành Stage trong WarSurvival",
+      "start_date": "2026-09-04",
+      "estimated_hours": 6.0,
+      "issue_type": "Story",
+      "optional_context": "Sau khi người chơi hoàn thành lần đầu một Stage và quay về Main Menu chuyển sang Stage mới, popup Bonus Gift xuất hiện trong T giây. Người chơi có thể xem Rewarded Ads để nhận phần thưởng theo tiến trình Stage; popup đóng khi nhận thưởng, bấm X hoặc hết thời gian.",
+      "assignee_id": 168,
+      "issue_id": 280368,
+      "issue_key": "GFW-874",
+      "blocks": [
+        {
+          "date": "2026-09-07",
+          "hours": 6.0,
+          "client_request_id": "workai-onboarding-2026-09-04-40540e6eb5f3-2026-09-07-6h",
+          "allocation_id": 104055,
+          "verified_at": "2026-09-12T04:37:13.396654+00:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 2,
+      "item_id": "workai-item-8dc05971b73c",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-04-8dc05971b73c",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "thêm logic độ lệch cho animation crowd",
+      "summary": "Thêm độ lệch thời gian cho animation crowd trong WarSurvival",
+      "start_date": "2026-09-04",
+      "estimated_hours": 1.5,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 280369,
+      "issue_key": "GFW-875",
+      "blocks": [
+        {
+          "date": "2026-09-07",
+          "hours": 1.5,
+          "client_request_id": "workai-onboarding-2026-09-04-8dc05971b73c-2026-09-07-1.5h",
+          "allocation_id": 104056,
+          "verified_at": "2026-09-12T04:37:40.006428+00:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 3,
+      "item_id": "workai-item-0916b79874f1",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-04-0916b79874f1",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "tối ưu hiệu năng tại những điểm bottle neck",
+      "summary": "Tối ưu hiệu năng tại các điểm bottle neck của gameplay WarSurvival",
+      "start_date": "2026-09-04",
+      "estimated_hours": 3.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 280370,
+      "issue_key": "GFW-876",
+      "blocks": [
+        {
+          "date": "2026-09-07",
+          "hours": 1.0,
+          "client_request_id": "workai-onboarding-2026-09-04-0916b79874f1-2026-09-07-1h",
+          "allocation_id": 104057,
+          "verified_at": "2026-09-12T04:38:05.912335+00:00"
+        },
+        {
+          "date": "2026-09-08",
+          "hours": 2.0,
+          "client_request_id": "workai-onboarding-2026-09-04-0916b79874f1-2026-09-08-2h",
+          "allocation_id": 104058,
+          "verified_at": "2026-09-12T04:38:07.156353+00:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 4,
+      "item_id": "workai-item-7b276f595667",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-05-7b276f595667",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "build game bản 0,0,1,4",
+      "summary": "Build game WarSurvival phiên bản 0.0.1.4 để kiểm thử nội bộ",
+      "start_date": "2026-09-05",
+      "estimated_hours": 5.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 280372,
+      "issue_key": "GFW-877",
+      "blocks": [
+        {
+          "date": "2026-09-08",
+          "hours": 5.0,
+          "client_request_id": "workai-onboarding-2026-09-05-7b276f595667-2026-09-08-5h",
+          "allocation_id": 104060,
+          "verified_at": "2026-09-12T04:38:34.679022+00:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 5,
+      "item_id": "workai-item-374a9554f421",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-05-374a9554f421",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "thay đổi logic tấn công của boss",
+      "summary": "Thay đổi logic tấn công của boss để tracking crowd trước khi đánh",
+      "start_date": "2026-09-05",
+      "estimated_hours": 6.0,
+      "issue_type": "Story",
+      "optional_context": "boss giờ sẽ tracking theo crowd trước khi tấn công",
+      "assignee_id": 168,
+      "issue_id": 280374,
+      "issue_key": "GFW-878",
+      "blocks": [
+        {
+          "date": "2026-09-08",
+          "hours": 2.23,
+          "client_request_id": "workai-onboarding-2026-09-05-374a9554f421-2026-09-08-2.23h",
+          "allocation_id": 104061,
+          "verified_at": "2026-09-12T04:39:01.260759+00:00"
+        },
+        {
+          "date": "2026-09-10",
+          "hours": 3.77,
+          "client_request_id": "workai-onboarding-2026-09-05-374a9554f421-2026-09-10-3.77h",
+          "allocation_id": 104062,
+          "verified_at": "2026-09-12T04:39:02.913936+00:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 6,
+      "item_id": "workai-item-53a61efea519",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-07-53a61efea519",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "build game ios bản 0,1,3",
+      "summary": "Build game iOS WarSurvival phiên bản 0.1.3 để kiểm thử nội bộ",
+      "start_date": "2026-09-07",
+      "estimated_hours": 8.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 280376,
+      "issue_key": "GFW-879",
+      "blocks": [
+        {
+          "date": "2026-09-10",
+          "hours": 4.93,
+          "client_request_id": "workai-onboarding-2026-09-07-53a61efea519-2026-09-10-4.93h",
+          "allocation_id": 104064,
+          "verified_at": "2026-09-12T04:39:26.933460+00:00"
+        },
+        {
+          "date": "2026-09-11",
+          "hours": 3.07,
+          "client_request_id": "workai-onboarding-2026-09-07-53a61efea519-2026-09-11-3.07h",
+          "allocation_id": 104065,
+          "verified_at": "2026-09-12T04:39:28.124729+00:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 7,
+      "item_id": "workai-item-b4cbfbe71f61",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-08-b4cbfbe71f61",
+      "project_id": 59,
+      "project_name": "G - ViecChungNgoaiDuAn",
+      "project_key": "VCNDA",
+      "task_name": "họp bàn về khung năng lực cho nhân sự",
+      "summary": "Họp bàn và thống nhất khung năng lực dành cho nhân sự công ty",
+      "start_date": "2026-09-08",
+      "estimated_hours": 1.5,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 280377,
+      "issue_key": "VCNDA-1076",
+      "blocks": [
+        {
+          "date": "2026-09-11",
+          "hours": 1.5,
+          "client_request_id": "workai-onboarding-2026-09-08-b4cbfbe71f61-2026-09-11-1.5h",
+          "allocation_id": 104066,
+          "verified_at": "2026-09-12T04:39:46.331619+00:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 8,
+      "item_id": "workai-item-1fd23a58670e",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-08-1fd23a58670e",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "Thêm logic chết cho unit trong crowd",
+      "summary": "Thêm logic animation chết cho từng unit trong crowd WarSurvival",
+      "start_date": "2026-09-08",
+      "estimated_hours": 4.0,
+      "issue_type": "Story",
+      "optional_context": "unit chết sẽ diễn anim chết chứ không biến mất như hiện tại",
+      "assignee_id": 168,
+      "issue_id": 280378,
+      "issue_key": "GFW-880",
+      "blocks": [
+        {
+          "date": "2026-09-11",
+          "hours": 4.0,
+          "client_request_id": "workai-onboarding-2026-09-08-1fd23a58670e-2026-09-11-4h",
+          "allocation_id": 104067,
+          "verified_at": "2026-09-12T04:40:11.812978+00:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 9,
+      "item_id": "workai-item-a0dd8309dab9",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-09-a0dd8309dab9",
+      "project_id": 85,
+      "project_name": "G - MOB.ERA",
+      "project_key": "GTLU",
+      "task_name": "build game android bản 0,0,3,6",
+      "summary": "Build game Android MOB.ERA phiên bản 0.0.3.6 để kiểm thử nội bộ",
+      "start_date": "2026-09-09",
+      "estimated_hours": 4.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 280384,
+      "issue_key": "GTLU-2993",
+      "blocks": [
+        {
+          "date": "2026-09-11",
+          "hours": 0.12,
+          "client_request_id": "workai-onboarding-2026-09-09-a0dd8309dab9-2026-09-11-0.12h",
+          "allocation_id": 104070,
+          "verified_at": "2026-09-12T04:40:36.070426+00:00"
+        },
+        {
+          "date": "2026-09-12",
+          "hours": 3.88,
+          "client_request_id": "workai-onboarding-2026-09-09-a0dd8309dab9-2026-09-12-3.88h",
+          "allocation_id": 104071,
+          "verified_at": "2026-09-12T04:40:37.502141+00:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    }
+  ]
+}

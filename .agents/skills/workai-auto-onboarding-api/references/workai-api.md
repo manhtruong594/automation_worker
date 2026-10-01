@@ -3,7 +3,7 @@
 ## Base URL
 
 ```text
-https://workai-be.horus.io.vn/api
+https://workai-be.horusjsc.com/api
 ```
 
 ## Auth

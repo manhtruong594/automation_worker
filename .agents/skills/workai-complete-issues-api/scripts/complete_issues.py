@@ -15,7 +15,7 @@ from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 
-DEFAULT_BASE_URL = "https://workai-be.horus.io.vn/api"
+DEFAULT_BASE_URL = "https://workai-be.horusjsc.com/api"
 TRANSITION_ID = "wf_in_progress_done"
 DONE_VALUES = {
     "done",

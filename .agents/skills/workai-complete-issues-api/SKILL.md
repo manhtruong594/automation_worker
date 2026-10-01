@@ -8,7 +8,7 @@ description: Hoàn thành một hoặc nhiều issue WorkAI qua transition API t
 Chuyển các issue được chỉ định sang trạng thái hoàn thành bằng:
 
 ```http
-POST https://workai-be.horus.io.vn/api/issues/<issue_id>/transition
+POST https://workai-be.horusjsc.com/api/issues/<issue_id>/transition
 Content-Type: application/json
 ```
 

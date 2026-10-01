@@ -1,0 +1,419 @@
+{
+  "schema_version": 1,
+  "batch_id": "workai-batch-d7170683b7816483",
+  "source_row_count": 12,
+  "items": [
+    {
+      "row_number": 1,
+      "item_id": "workai-item-3f446cebc548",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-12-3f446cebc548",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "tách công thức tính upgrade ra thành scriptable objects",
+      "summary": "Tách công thức tính nâng cấp thành ScriptableObject cho hệ thống WarSurvival",
+      "start_date": "2026-09-12",
+      "estimated_hours": 6.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 286316,
+      "issue_key": "GFW-1003",
+      "blocks": [
+        {
+          "date": "2026-09-14",
+          "hours": 6.0,
+          "client_request_id": "workai-onboarding-2026-09-12-3f446cebc548-2026-09-14-6h",
+          "allocation_id": 110881,
+          "verified_at": "2026-09-21T09:46:52.1172202+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 2,
+      "item_id": "workai-item-df4650c9ec6c",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-14-df4650c9ec6c",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "sửa lại logic sound, thêm sound mới",
+      "summary": "Sửa logic âm thanh, thêm delay khi phát chồng và fade out music trong WarSurvival",
+      "start_date": "2026-09-14",
+      "estimated_hours": 6.0,
+      "issue_type": "Story",
+      "optional_context": "thêm logic delay khi phát sound chồng nhau, fade out cho music",
+      "assignee_id": 168,
+      "issue_id": 286318,
+      "issue_key": "GFW-1004",
+      "blocks": [
+        {
+          "date": "2026-09-14",
+          "hours": 2.24,
+          "client_request_id": "workai-onboarding-2026-09-14-df4650c9ec6c-2026-09-14-2.24h",
+          "allocation_id": 110882,
+          "verified_at": "2026-09-21T09:47:17.0085062+07:00"
+        },
+        {
+          "date": "2026-09-15",
+          "hours": 3.76,
+          "client_request_id": "workai-onboarding-2026-09-14-df4650c9ec6c-2026-09-15-3.76h",
+          "allocation_id": 110883,
+          "verified_at": "2026-09-21T09:47:17.0086172+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 3,
+      "item_id": "workai-item-43893616bef7",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-15-43893616bef7",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "build game android bản 0,0,1,5",
+      "summary": "Build và kiểm tra bản Android 0.0.1.5 cho game WarSurvival",
+      "start_date": "2026-09-15",
+      "estimated_hours": 6.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 286319,
+      "issue_key": "GFW-1005",
+      "blocks": [
+        {
+          "date": "2026-09-15",
+          "hours": 6.0,
+          "client_request_id": "workai-onboarding-2026-09-15-43893616bef7-2026-09-15-6h",
+          "allocation_id": 110886,
+          "verified_at": "2026-09-21T09:47:47.0687039+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 4,
+      "item_id": "workai-item-6029a69f0409",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-15-6029a69f0409",
+      "project_id": 85,
+      "project_name": "G - MOB.ERA",
+      "project_key": "GTLU",
+      "task_name": "kiểm tra và sửa lỗi khi xem quảng cáo user không nhận được phần thưởng do kill app",
+      "summary": "Kiểm tra và sửa lỗi mất phần thưởng quảng cáo khi người chơi kill app",
+      "start_date": "2026-09-15",
+      "estimated_hours": 6.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 286327,
+      "issue_key": "GTLU-3095",
+      "blocks": [
+        {
+          "date": "2026-09-15",
+          "hours": 0.55,
+          "client_request_id": "workai-onboarding-2026-09-15-6029a69f0409-2026-09-15-0.55h",
+          "allocation_id": 110890,
+          "verified_at": "2026-09-21T09:48:22.4065889+07:00"
+        },
+        {
+          "date": "2026-09-16",
+          "hours": 5.45,
+          "client_request_id": "workai-onboarding-2026-09-15-6029a69f0409-2026-09-16-5.45h",
+          "allocation_id": 110891,
+          "verified_at": "2026-09-21T09:48:22.406666+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 5,
+      "item_id": "workai-item-aea3bfb68dcb",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-16-aea3bfb68dcb",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "build game ios bản 0,1,5",
+      "summary": "Build và kiểm tra bản iOS 0.1.5 cho game WarSurvival",
+      "start_date": "2026-09-16",
+      "estimated_hours": 6.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 286328,
+      "issue_key": "GFW-1006",
+      "blocks": [
+        {
+          "date": "2026-09-16",
+          "hours": 2.9,
+          "client_request_id": "workai-onboarding-2026-09-16-aea3bfb68dcb-2026-09-16-2.9h",
+          "allocation_id": 110893,
+          "verified_at": "2026-09-21T09:48:56.5783845+07:00"
+        },
+        {
+          "date": "2026-09-17",
+          "hours": 3.1,
+          "client_request_id": "workai-onboarding-2026-09-16-aea3bfb68dcb-2026-09-17-3.1h",
+          "allocation_id": 110894,
+          "verified_at": "2026-09-21T09:48:56.5784697+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 6,
+      "item_id": "workai-item-4f44fcf7ade1",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-17-4f44fcf7ade1",
+      "project_id": 85,
+      "project_name": "G - MOB.ERA",
+      "project_key": "GTLU",
+      "task_name": "build game android bản 0,0,3,7",
+      "summary": "Build và kiểm tra bản Android 0.0.3.7 cho game MOB.ERA",
+      "start_date": "2026-09-17",
+      "estimated_hours": 4.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 286331,
+      "issue_key": "GTLU-3096",
+      "blocks": [
+        {
+          "date": "2026-09-17",
+          "hours": 4.0,
+          "client_request_id": "workai-onboarding-2026-09-17-4f44fcf7ade1-2026-09-17-4h",
+          "allocation_id": 110896,
+          "verified_at": "2026-09-21T09:49:31.1346131+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 7,
+      "item_id": "workai-item-4202f3f7b097",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-17-4202f3f7b097",
+      "project_id": 59,
+      "project_name": "G - ViecChungNgoaiDuAn",
+      "project_key": "VCNDA",
+      "task_name": "Duyệt cv chuẩn bị cho phỏng vấn",
+      "summary": "Duyệt CV và chuẩn bị phỏng vấn cho bốn ứng viên được cung cấp",
+      "start_date": "2026-09-17",
+      "estimated_hours": 1.5,
+      "issue_type": "Story",
+      "optional_context": "ứng viên: Nguyễn Minh Quý, Đỗ Hoành Thông, Nguyễn Minh Quang, Hoàng Đình Cảnh",
+      "assignee_id": 168,
+      "issue_id": 286332,
+      "issue_key": "VCNDA-1212",
+      "blocks": [
+        {
+          "date": "2026-09-17",
+          "hours": 1.5,
+          "client_request_id": "workai-onboarding-2026-09-17-4202f3f7b097-2026-09-17-1.5h",
+          "allocation_id": 110897,
+          "verified_at": "2026-09-21T09:49:52.5172416+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 8,
+      "item_id": "workai-item-64be4eb6bb3c",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-18-64be4eb6bb3c",
+      "project_id": 85,
+      "project_name": "G - MOB.ERA",
+      "project_key": "GTLU",
+      "task_name": "Mode chơi mới era rush - phân tích design, lên plan code",
+      "summary": "Phân tích thiết kế và lập kế hoạch code cho mode chơi Era Rush",
+      "start_date": "2026-09-18",
+      "estimated_hours": 4.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 286333,
+      "issue_key": "GTLU-3097",
+      "blocks": [
+        {
+          "date": "2026-09-18",
+          "hours": 4.0,
+          "client_request_id": "workai-onboarding-2026-09-18-64be4eb6bb3c-2026-09-18-4h",
+          "allocation_id": 110898,
+          "verified_at": "2026-09-21T09:50:18.7072352+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 9,
+      "item_id": "workai-item-c77900328dc4",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-18-c77900328dc4",
+      "project_id": 85,
+      "project_name": "G - MOB.ERA",
+      "project_key": "GTLU",
+      "task_name": "Mode chơi mới era rush - code logic riêng liên quan đến nâng cấp, tiến trình, live ops",
+      "summary": "Code logic nâng cấp, tiến trình và live ops cho mode chơi Era Rush",
+      "start_date": "2026-09-18",
+      "estimated_hours": 6.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 286335,
+      "issue_key": "GTLU-3098",
+      "blocks": [
+        {
+          "date": "2026-09-18",
+          "hours": 4.42,
+          "client_request_id": "workai-onboarding-2026-09-18-c77900328dc4-2026-09-18-4.42h",
+          "allocation_id": 110900,
+          "verified_at": "2026-09-21T09:53:28.3633682+07:00"
+        },
+        {
+          "date": "2026-09-22",
+          "hours": 1.58,
+          "client_request_id": "workai-onboarding-2026-09-18-c77900328dc4-2026-09-22-1.58h",
+          "allocation_id": 110904,
+          "verified_at": "2026-09-21T09:53:31.8087986+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 10,
+      "item_id": "workai-item-a91078921184",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-19-a91078921184",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "Thêm logic thanh tiến trình cho gate",
+      "summary": "Thêm logic thanh tiến trình để hiển thị thay đổi giá trị trên gate rõ ràng",
+      "start_date": "2026-09-19",
+      "estimated_hours": 6.0,
+      "issue_type": "Story",
+      "optional_context": "Để việc hiển thị mức thay đổi value trên gate được rõ ràng hơn",
+      "assignee_id": 168,
+      "issue_id": 286336,
+      "issue_key": "GFW-1007",
+      "blocks": [
+        {
+          "date": "2026-09-21",
+          "hours": 6.0,
+          "client_request_id": "workai-onboarding-2026-09-19-a91078921184-2026-09-21-6h",
+          "allocation_id": 110901,
+          "verified_at": "2026-09-21T09:51:06.9452908+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 11,
+      "item_id": "workai-item-49c50dd539ac",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-19-49c50dd539ac",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "task_name": "Thêm scale cho breakable objects và sửa prefab saw cho phép config được nhiều tier",
+      "summary": "Thêm scale cho breakable objects và cấu hình nhiều tier cho prefab saw",
+      "start_date": "2026-09-19",
+      "estimated_hours": 1.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 286337,
+      "issue_key": "GFW-1008",
+      "blocks": [
+        {
+          "date": "2026-09-21",
+          "hours": 1.0,
+          "client_request_id": "workai-onboarding-2026-09-19-49c50dd539ac-2026-09-21-1h",
+          "allocation_id": 110902,
+          "verified_at": "2026-09-21T09:51:33.8627382+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    },
+    {
+      "row_number": 12,
+      "item_id": "workai-item-bd8acb78f6a6",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-09-21-bd8acb78f6a6",
+      "project_id": 59,
+      "project_name": "G - ViecChungNgoaiDuAn",
+      "project_key": "VCNDA",
+      "task_name": "Chấm điểm cho nhân viên dựa trên thang khung năng lực đã làm của tuần trước",
+      "summary": "Chấm điểm nhân viên theo khung năng lực đã xây dựng trong tuần trước",
+      "start_date": "2026-09-21",
+      "estimated_hours": 1.0,
+      "issue_type": "Story",
+      "optional_context": "",
+      "assignee_id": 168,
+      "issue_id": 286338,
+      "issue_key": "VCNDA-1213",
+      "blocks": [
+        {
+          "date": "2026-09-21",
+          "hours": 1.0,
+          "client_request_id": "workai-onboarding-2026-09-21-bd8acb78f6a6-2026-09-21-1h",
+          "allocation_id": 110903,
+          "verified_at": "2026-09-21T09:52:10.5687596+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": false,
+      "fallback_reason": null,
+      "error": null
+    }
+  ]
+}

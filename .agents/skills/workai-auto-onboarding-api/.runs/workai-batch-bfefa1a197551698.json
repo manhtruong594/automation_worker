@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "batch_id": "workai-batch-bfefa1a197551698",
+  "source_row_count": 4,
+  "items": [
+    {
+      "row_number": 1,
+      "item_id": "workai-item-51cc57cf352a",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-08-28-51cc57cf352a",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "Sửa lại logic di chuyển của enemy để đỡ bị trượt",
+      "summary": "Sửa logic di chuyển của enemy để giảm hiện tượng trượt trong gameplay CrowdBattle",
+      "start_date": "2026-08-28",
+      "estimated_hours": 2.0,
+      "issue_id": 273640,
+      "issue_key": "GFW-689",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-28",
+          "hours": 2.0,
+          "client_request_id": "workai-onboarding-2026-08-28-51cc57cf352a-2026-08-28-2h",
+          "allocation_id": 96883,
+          "verified_at": "2026-09-03T08:38:23.1328276+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    },
+    {
+      "row_number": 2,
+      "item_id": "workai-item-ce7892e5a334",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-08-28-ce7892e5a334",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "build game android bản 0,1,3",
+      "summary": "Build game Android phiên bản 0.1.3 cho dự án WarSurvival",
+      "start_date": "2026-08-28",
+      "estimated_hours": 4.0,
+      "issue_id": 273642,
+      "issue_key": "GFW-690",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-28",
+          "hours": 4.0,
+          "client_request_id": "workai-onboarding-2026-08-28-ce7892e5a334-2026-08-28-4h",
+          "allocation_id": 96886,
+          "verified_at": "2026-09-03T08:38:42.5845981+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    },
+    {
+      "row_number": 3,
+      "item_id": "workai-item-4bd9f47af1ab",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-08-28-4bd9f47af1ab",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "thêm biến hiển thị layout vào tool test",
+      "summary": "Thêm biến hiển thị layout vào tool test của WarSurvival",
+      "start_date": "2026-08-28",
+      "estimated_hours": 1.0,
+      "issue_id": 273645,
+      "issue_key": "GFW-691",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-28",
+          "hours": 1.0,
+          "client_request_id": "workai-onboarding-2026-08-28-4bd9f47af1ab-2026-08-28-1h",
+          "allocation_id": 96888,
+          "verified_at": "2026-09-03T08:39:03.1564331+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    },
+    {
+      "row_number": 4,
+      "item_id": "workai-item-10f215a07d3a",
+      "status": "completed",
+      "last_verified_step": "completed",
+      "client_request_id": "workai-onboarding-2026-08-28-10f215a07d3a",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "fix lỗi build",
+      "summary": "Khắc phục lỗi build game Android cho dự án WarSurvival",
+      "start_date": "2026-08-28",
+      "estimated_hours": 3.0,
+      "issue_id": 273649,
+      "issue_key": "GFW-692",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-28",
+          "hours": 1.7,
+          "client_request_id": "workai-onboarding-2026-08-28-10f215a07d3a-2026-08-28-1.7h",
+          "allocation_id": 96892,
+          "verified_at": "2026-09-03T08:39:38.7810799+07:00"
+        },
+        {
+          "date": "2026-09-03",
+          "hours": 1.3,
+          "client_request_id": "workai-onboarding-2026-08-28-10f215a07d3a-2026-09-03-1.3h",
+          "allocation_id": 96897,
+          "verified_at": "2026-09-03T08:39:45.9532514+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    }
+  ]
+}

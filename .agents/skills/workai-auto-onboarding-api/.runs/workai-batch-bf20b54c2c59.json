@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "batch_id": "workai-batch-bf20b54c2c59",
+  "source_row_count": 1,
+  "items": [
+    {
+      "row_number": 1,
+      "item_id": "workai-item-d8dbb80985f4",
+      "status": "partially_scheduled",
+      "last_verified_step": "timeline_verified_8_of_16_hours",
+      "client_request_id": "workai-onboarding-2026-08-22-d8dbb80985f4",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "summary": "build game ios bản 0,1,0 để phục vụ kiểm thử và phát hành",
+      "start_date": "2026-08-22",
+      "estimated_hours": 16,
+      "issue_id": 268533,
+      "issue_key": "GFW-551",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-22",
+          "hours": 2,
+          "client_request_id": "workai-onboarding-2026-08-22-d8dbb80985f4-2026-08-22-2h",
+          "allocation_id": 91070,
+          "verified_at": "2026-08-22T15:31:38.2798121+07:00"
+        },
+        {
+          "date": "2026-08-24",
+          "hours": 6,
+          "client_request_id": "workai-onboarding-2026-08-22-d8dbb80985f4-2026-08-24-6h",
+          "allocation_id": 91072,
+          "verified_at": "2026-08-22T15:32:36.3667340+07:00"
+        }
+      ],
+      "content_applied": false,
+      "fallback_used": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "WorkAI từ chối phân bổ thêm: Issue này đã được phân bổ tổng cộng 8h / 8h. Còn có thể phân bổ thêm: 0h. Issue detail vẫn ghi estimated_hours=16.00.",
+        "blocked_step": "allocate_remaining_8_hours",
+        "verified_at": "2026-08-22T15:33:25.2301880+07:00"
+      }
+    }
+  ]
+}

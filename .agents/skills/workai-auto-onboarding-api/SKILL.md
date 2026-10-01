@@ -32,6 +32,16 @@ Authorization: Bearer <WORKAI_TOKEN>
 Cookie: sessionToken=<WORKAI_SESSION_TOKEN>
 ```
 
+## HTTP Client Bắt Buộc
+
+Dùng **`curl.exe` cho mọi request WorkAI**, gồm preflight `GET`, đọc lại để reconcile và các `POST`/`PUT`. Trên PowerShell gọi đúng `curl.exe`, không gọi alias `curl`. Nếu điều phối bằng Python, gọi `curl.exe` qua `subprocess` với danh sách đối số; không dùng `urllib`, `requests` hoặc `Invoke-WebRequest` cho WorkAI. Lần chạy trước, cùng URL và token trả `200` qua `curl.exe` nhưng trả Cloudflare `403`/Error `1010` qua Python `urllib`.
+
+Trước side effect đầu tiên, kiểm tra `curl.exe --version`, rồi thực hiện request `GET /time-allocations` chỉ đọc bằng **cùng transport và credential sẽ dùng cho toàn batch**. Chỉ tiếp tục khi nhận JSON WorkAI hợp lệ và HTTP thành công. Nếu `curl.exe` không có hoặc preflight thất bại, dừng trước khi tạo issue; không tự chuyển sang HTTP client khác.
+
+Mẫu gọi an toàn và cách lấy HTTP status/Ray ID nằm trong `references/curl-transport.md`. Không đưa token/cookie vào command-line arguments, log, checkpoint hay báo cáo. Với request JSON, truyền body qua file tạm và xóa trong `finally`. Giữ `--max-time 30` riêng cho `/issues/quick-create/suggest-description`; timeout của các endpoint khác không được dùng để suy đoán mutation đã thất bại.
+
+Nếu nhận trang HTML Cloudflare `403`/Error `1010`, lưu HTTP status và `cf-ray` (nếu có), dừng batch, rồi báo quản trị viên WorkAI kiểm tra Cloudflare Security Events theo Ray ID. Không coi đây là `UNAUTHENTICATED`, không đổi token hoặc tự động retry mutation. Nếu lỗi xuất hiện sau side effect, giữ checkpoint và reconcile server trước mọi lần chạy lại.
+
 ## Input Và Chuẩn Hóa
 
 Nhận một object hoặc bảng nhiều dòng. Trường bắt buộc:
@@ -254,3 +264,4 @@ Ghi tổng `completed`, `failed`, `partially_scheduled` và đường dẫn file
 
 - `references/workai-api.md`
 - `references/api-response-shapes.md`
+- `references/curl-transport.md`

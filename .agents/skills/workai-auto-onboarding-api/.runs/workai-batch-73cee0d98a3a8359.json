@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "batch_id": "workai-batch-73cee0d98a3a8359",
+  "source_row_count": 9,
+  "items": [
+    {
+      "row_number": 1,
+      "item_id": "workai-item-a0c1695a88da",
+      "status": "completed",
+      "last_verified_step": "completed_server_verified",
+      "client_request_id": "workai-onboarding-2026-08-24-a0c1695a88da",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "fix feedback trải nghiệm game",
+      "summary": "Thay loading screen giữa các level và chạy camera preview toàn màn chơi",
+      "start_date": "2026-08-24",
+      "estimated_hours": 4.0,
+      "optional_context": "Thay màn hình loading screen vào giữa khi người chơi hoàn thành 1 level, Logic chạy camera từ đầu đến cuối tương tự như bên mob era đầu các level",
+      "issue_id": 270944,
+      "issue_key": "GFW-619",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-24",
+          "hours": 2.1,
+          "client_request_id": "workai-onboarding-2026-08-24-a0c1695a88da-2026-08-24-2.1h",
+          "allocation_id": 93693,
+          "verified_at": "2026-08-26T14:54:53.0165137+07:00"
+        },
+        {
+          "date": "2026-08-25",
+          "hours": 1.9,
+          "client_request_id": "workai-onboarding-2026-08-24-a0c1695a88da-2026-08-25-1.9h",
+          "allocation_id": 93694,
+          "verified_at": "2026-08-26T14:54:53.7175592+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    },
+    {
+      "row_number": 2,
+      "item_id": "workai-item-271c9f14b133",
+      "status": "completed",
+      "last_verified_step": "completed_server_verified",
+      "client_request_id": "workai-onboarding-2026-08-25-271c9f14b133",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "fix feedback trải nghiệm game",
+      "summary": "Thay animation cho toàn bộ unit enemy trong gameplay CrowdBattle",
+      "start_date": "2026-08-25",
+      "estimated_hours": 4.0,
+      "optional_context": "Thay anim cho toàn bộ unit enemy",
+      "issue_id": 270946,
+      "issue_key": "GFW-620",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-25",
+          "hours": 4.0,
+          "client_request_id": "workai-onboarding-2026-08-25-271c9f14b133-2026-08-25-4h",
+          "allocation_id": 93697,
+          "verified_at": "2026-08-26T14:55:25.2563422+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    },
+    {
+      "row_number": 3,
+      "item_id": "workai-item-4218beb1ce69",
+      "status": "completed",
+      "last_verified_step": "completed_server_verified",
+      "client_request_id": "workai-onboarding-2026-08-24-4218beb1ce69",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "fix feedback trải nghiệm game",
+      "summary": "Thêm animation ăn mừng và chạy lên trước cho crowd sau khi hạ boss",
+      "start_date": "2026-08-24",
+      "estimated_hours": 4.0,
+      "optional_context": "Khi tiêu diệt boss xong, crowd diễn anim nhảy rồi chạy thẳng lên trước",
+      "issue_id": 270951,
+      "issue_key": "GFW-623",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-25",
+          "hours": 2.77,
+          "client_request_id": "workai-onboarding-2026-08-24-4218beb1ce69-2026-08-25-2.77h",
+          "allocation_id": 93700,
+          "verified_at": "2026-08-26T14:55:59.9905813+07:00"
+        },
+        {
+          "date": "2026-08-26",
+          "hours": 1.23,
+          "client_request_id": "workai-onboarding-2026-08-24-4218beb1ce69-2026-08-26-1.23h",
+          "allocation_id": 93702,
+          "verified_at": "2026-08-26T14:56:00.5521912+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    },
+    {
+      "row_number": 4,
+      "item_id": "workai-item-fbec50362c97",
+      "status": "completed",
+      "last_verified_step": "completed_server_verified",
+      "client_request_id": "workai-onboarding-2026-08-25-fbec50362c97",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "setup boss tanker",
+      "summary": "Thiết lập boss Tanker cho các level có boss trong gameplay CrowdBattle",
+      "start_date": "2026-08-25",
+      "estimated_hours": 2.0,
+      "optional_context": "",
+      "issue_id": 270952,
+      "issue_key": "GFW-624",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-26",
+          "hours": 2.0,
+          "client_request_id": "workai-onboarding-2026-08-25-fbec50362c97-2026-08-26-2h",
+          "allocation_id": 93704,
+          "verified_at": "2026-08-26T14:56:41.4864208+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    },
+    {
+      "row_number": 5,
+      "item_id": "workai-item-199fd6dbfb4a",
+      "status": "completed",
+      "last_verified_step": "completed_server_verified",
+      "client_request_id": "workai-onboarding-2026-08-25-199fd6dbfb4a",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "thêm config khoảng cách đổi hướng của enemy vào từng kịch bản, hiện tại đang để chung cho tất cả các kịch bản",
+      "summary": "Thêm config khoảng cách đổi hướng enemy riêng cho từng kịch bản",
+      "start_date": "2026-08-25",
+      "estimated_hours": 3.0,
+      "optional_context": "",
+      "issue_id": 270954,
+      "issue_key": "GFW-626",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-26",
+          "hours": 3.0,
+          "client_request_id": "workai-onboarding-2026-08-25-199fd6dbfb4a-2026-08-26-3h",
+          "allocation_id": 93707,
+          "verified_at": "2026-08-26T14:57:24.9468849+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    },
+    {
+      "row_number": 6,
+      "item_id": "workai-item-5d8df3d2b589",
+      "status": "completed",
+      "last_verified_step": "completed_server_verified",
+      "client_request_id": "workai-onboarding-2026-08-26-5d8df3d2b589",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "thêm tính năng chỉnh sửa boss vào tool kịch bản",
+      "summary": "Thêm tính năng chỉnh sửa boss vào công cụ cấu hình kịch bản",
+      "start_date": "2026-08-26",
+      "estimated_hours": 4.0,
+      "optional_context": "",
+      "issue_id": 270956,
+      "issue_key": "GFW-627",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-26",
+          "hours": 1.77,
+          "client_request_id": "workai-onboarding-2026-08-26-5d8df3d2b589-2026-08-26-1.77h",
+          "allocation_id": 93709,
+          "verified_at": "2026-08-26T14:58:13.0602629+07:00"
+        },
+        {
+          "date": "2026-08-27",
+          "hours": 2.23,
+          "client_request_id": "workai-onboarding-2026-08-26-5d8df3d2b589-2026-08-27-2.23h",
+          "allocation_id": 93710,
+          "verified_at": "2026-08-26T14:58:13.8859221+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    },
+    {
+      "row_number": 7,
+      "item_id": "workai-item-10491d0f32ac",
+      "status": "completed",
+      "last_verified_step": "completed_server_verified",
+      "client_request_id": "workai-onboarding-2026-08-26-10491d0f32ac",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "Setup thêm 2 bẫy Spike_log và Saw_blade",
+      "summary": "Thiết lập thêm hai bẫy Spike_log và Saw_blade trong các level",
+      "start_date": "2026-08-26",
+      "estimated_hours": 2.0,
+      "optional_context": "",
+      "issue_id": 270958,
+      "issue_key": "GFW-628",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-27",
+          "hours": 2.0,
+          "client_request_id": "workai-onboarding-2026-08-26-10491d0f32ac-2026-08-27-2h",
+          "allocation_id": 93712,
+          "verified_at": "2026-08-26T14:58:51.6572087+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    },
+    {
+      "row_number": 8,
+      "item_id": "workai-item-ca0935f75a2c",
+      "status": "completed",
+      "last_verified_step": "completed_server_verified",
+      "client_request_id": "workai-onboarding-2026-08-26-ca0935f75a2c",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "build game ios bản 0,1,2 để phục vụ kiểm thử và phát hành",
+      "summary": "Build game iOS bản 0,1,2 để phục vụ kiểm thử và phát hành",
+      "start_date": "2026-08-26",
+      "estimated_hours": 1.5,
+      "optional_context": "",
+      "issue_id": 270960,
+      "issue_key": "GFW-630",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-27",
+          "hours": 1.5,
+          "client_request_id": "workai-onboarding-2026-08-26-ca0935f75a2c-2026-08-27-1.5h",
+          "allocation_id": 93713,
+          "verified_at": "2026-08-26T14:59:27.6305580+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    },
+    {
+      "row_number": 9,
+      "item_id": "workai-item-3ee3d1c9bd24",
+      "status": "completed",
+      "last_verified_step": "completed_server_verified",
+      "client_request_id": "workai-onboarding-2026-08-27-3ee3d1c9bd24",
+      "project_id": 115,
+      "project_name": "G - WarSurvival",
+      "project_key": "GFW",
+      "issue_type": "Story",
+      "task_name": "Thêm logic setting sensitive vào ui setting ingame và mainmenu",
+      "summary": "Thêm logic chỉnh sensitivity vào UI setting trong game và main menu",
+      "start_date": "2026-08-27",
+      "estimated_hours": 2.0,
+      "optional_context": "",
+      "issue_id": 270961,
+      "issue_key": "GFW-631",
+      "assignee_id": 168,
+      "blocks": [
+        {
+          "date": "2026-08-27",
+          "hours": 2.0,
+          "client_request_id": "workai-onboarding-2026-08-27-3ee3d1c9bd24-2026-08-27-2h",
+          "allocation_id": 93714,
+          "verified_at": "2026-08-26T15:00:02.1794790+07:00"
+        }
+      ],
+      "content_applied": true,
+      "fallback_used": true,
+      "error": null
+    }
+  ]
+}
